@@ -1,4 +1,5 @@
-module.exports = {
+const withAnimations = require('animated-tailwindcss');
+module.exports = withAnimations({
   content: ["./src/**/*.{html,js}"],
   theme: {
 
@@ -14,4 +15,4 @@ module.exports = {
   plugins: [
     require('tailwind-scrollbar'),
   ],
-}
+});
