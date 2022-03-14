@@ -566,6 +566,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -3rem;
 }
 
+.-top-16 {
+  top: -4rem;
+}
+
+.-top-10 {
+  top: -2.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -584,6 +592,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .z-10 {
   z-index: 10;
+}
+
+.z-\[500\] {
+  z-index: 500;
 }
 
 .mx-auto {
@@ -830,6 +842,97 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: 1s both tada;
 }
 
+@-webkit-keyframes jackInTheBox {
+  from {
+    transform: scale3d(0.1, 0.1, 1) rotate3d(0, 0, 1, 30deg);
+    transform-origin: center bottom;
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  70% {
+    transform: rotate3d(0, 0, 1, 3deg);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    transform: scale3d(0.1, 0.1, 1) rotate3d(0, 0, 1, 30deg);
+    transform-origin: center bottom;
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  70% {
+    transform: rotate3d(0, 0, 1, 3deg);
+  }
+}
+
+.animate-jackInTheBox {
+  -webkit-animation: 1s both jackInTheBox;
+          animation: 1s both jackInTheBox;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+.animate-fadeIn {
+  -webkit-animation: 1s both fadeIn;
+          animation: 1s both fadeIn;
+}
+
+@-webkit-keyframes zoomInDown {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, calc(-1 * var(--animate-distance, 2000px)), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, calc(-1 * var(--animate-distance, 2000px)), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+  }
+}
+
+.animate-zoomInDown {
+  -webkit-animation: 1s both zoomInDown;
+          animation: 1s both zoomInDown;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -958,6 +1061,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-neutral-800\/90 {
   background-color: rgb(38 38 38 / 0.9);
+}
+
+.bg-neutral-700\/30 {
+  background-color: rgb(64 64 64 / 0.3);
+}
+
+.bg-neutral-700\/20 {
+  background-color: rgb(64 64 64 / 0.2);
+}
+
+.bg-neutral-800\/20 {
+  background-color: rgb(38 38 38 / 0.2);
+}
+
+.bg-neutral-800\/30 {
+  background-color: rgb(38 38 38 / 0.3);
+}
+
+.bg-neutral-800\/50 {
+  background-color: rgb(38 38 38 / 0.5);
 }
 
 .fill-green-500 {
@@ -1176,10 +1299,27 @@ Ensure the default browser behavior of the `hidden` attribute.
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.backdrop-blur-xl {
+  --tw-backdrop-blur: blur(24px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.animate-fast {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
 }
 
 .animate-slow {
@@ -1200,6 +1340,61 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-delay-1s {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.animate-delay-\[900mx\] {
+  -webkit-animation-delay: 900mx;
+          animation-delay: 900mx;
+}
+
+.animate-delay-\[900ms\] {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.animate-delay-\[950ms\] {
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
+}
+
+.animate-delay-\[910ms\] {
+  -webkit-animation-delay: 910ms;
+          animation-delay: 910ms;
+}
+
+.animate-delay-\[920ms\] {
+  -webkit-animation-delay: 920ms;
+          animation-delay: 920ms;
+}
+
+.animate-delay-\[930ms\] {
+  -webkit-animation-delay: 930ms;
+          animation-delay: 930ms;
+}
+
+.animate-delay-\[940ms\] {
+  -webkit-animation-delay: 940ms;
+          animation-delay: 940ms;
+}
+
+.animate-delay-\[960ms\] {
+  -webkit-animation-delay: 960ms;
+          animation-delay: 960ms;
+}
+
+.animate-delay-\[500ms\] {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.animate-delay-\[50ms\] {
+  -webkit-animation-delay: 50ms;
+          animation-delay: 50ms;
+}
+
+.animate-delay-2s {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 .scrollbar {
