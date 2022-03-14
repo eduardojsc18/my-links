@@ -1114,6 +1114,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1252,6 +1260,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-neutral-900\/10 {
   background-color: rgb(23 23 23 / 0.1);
+}
+
+.bg-yellow-500\/10 {
+  background-color: rgb(234 179 8 / 0.1);
+}
+
+.bg-yellow-500\/5 {
+  background-color: rgb(234 179 8 / 0.05);
 }
 
 .bg-opacity-10 {
