@@ -694,6 +694,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: -10rem;
 }
 
+.-bottom-2\.5 {
+  bottom: -0.625rem;
+}
+
+.bottom-1\.5 {
+  bottom: 0.375rem;
+}
+
+.-bottom-0\.5 {
+  bottom: -0.125rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -724,6 +736,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-z-10 {
   z-index: -10;
+}
+
+.\!z-50 {
+  z-index: 50 !important;
+}
+
+.\!z-\[200\] {
+  z-index: 200 !important;
 }
 
 .m-5 {
@@ -1465,6 +1485,22 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: 1s both backInUp;
 }
 
+.cursor-wait {
+  cursor: wait;
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-\[\1F381\] {
+  cursor: 🎁;
+}
+
+.cursor-\[url\(\'\1F381\'\)\] {
+  cursor: url('🎁');
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1601,6 +1637,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
+.border-yellow-600\/30 {
+  border-color: rgb(202 138 4 / 0.3);
+}
+
+.border-yellow-500\/60 {
+  border-color: rgb(234 179 8 / 0.6);
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1631,6 +1675,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.\!bg-neutral-800\/90 {
+  background-color: rgb(38 38 38 / 0.9) !important;
+}
+
+.\!bg-neutral-800\/10 {
+  background-color: rgb(38 38 38 / 0.1) !important;
+}
+
+.\!bg-yellow-500\/5 {
+  background-color: rgb(234 179 8 / 0.05) !important;
+}
+
+.\!bg-neutral-800\/40 {
+  background-color: rgb(38 38 38 / 0.4) !important;
 }
 
 .fill-green-500 {
@@ -1862,6 +1922,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.\!shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
 .shadow-red-600 {
   --tw-shadow-color: #dc2626;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1897,6 +1963,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.\!backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px) !important;
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
+}
+
+.\!backdrop-blur {
+  --tw-backdrop-blur: blur(8px) !important;
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
 }
 
 .transition-all {
@@ -2153,6 +2231,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
+  .md\:-bottom-5 {
+    bottom: -1.25rem;
+  }
+
+  .md\:-bottom-2\.5 {
+    bottom: -0.625rem;
+  }
+
+  .md\:-bottom-2 {
+    bottom: -0.5rem;
+  }
+
   .md\:h-36 {
     height: 9rem;
   }
