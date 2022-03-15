@@ -690,6 +690,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 0px;
 }
 
+.-bottom-40 {
+  bottom: -10rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1413,6 +1417,54 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceInDown;
 }
 
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+}
+
+.animate-fadeInUp {
+  -webkit-animation: 1s both fadeInUp;
+          animation: 1s both fadeInUp;
+}
+
+@-webkit-keyframes backInUp {
+  from {
+    transform: translate3d(0, var(--animate-distance, 1000px), 0) scale3d(0, 0, 1);
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  }
+}
+
+@keyframes backInUp {
+  from {
+    transform: translate3d(0, var(--animate-distance, 1000px), 0) scale3d(0, 0, 1);
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  }
+}
+
+.animate-backInUp {
+  -webkit-animation: 1s both backInUp;
+          animation: 1s both backInUp;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1931,6 +1983,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-delay-\[600ms\] {
   -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
+}
+
+.animate-delay-1s {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .scrollbar {
