@@ -14,5 +14,6 @@ module.exports = withAnimations({
   },
   plugins: [
     require('tailwind-scrollbar'),
+    require('@tailwindcss/line-clamp'),
   ],
 });
