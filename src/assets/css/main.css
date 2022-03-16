@@ -637,6 +637,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px;
 }
 
+.-top-2 {
+  top: -0.5rem;
+}
+
+.-top-1 {
+  top: -0.25rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -702,6 +710,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-mt-14 {
   margin-top: -3.5rem;
+}
+
+.\!-mt-12 {
+  margin-top: -3rem !important;
+}
+
+.\!-mt-14 {
+  margin-top: -3.5rem !important;
 }
 
 .box-content {
@@ -1308,6 +1324,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(38 38 38 / 0));
 }
 
+.from-neutral-900\/30 {
+  --tw-gradient-from: rgb(23 23 23 / 0.3);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0));
+}
+
+.from-neutral-900\/60 {
+  --tw-gradient-from: rgb(23 23 23 / 0.6);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0));
+}
+
+.from-neutral-900\/80 {
+  --tw-gradient-from: rgb(23 23 23 / 0.8);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0));
+}
+
 .to-neutral-800 {
   --tw-gradient-to: #262626;
 }
@@ -1462,6 +1493,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .\!pb-12 {
   padding-bottom: 3rem !important;
+}
+
+.\!pt-24 {
+  padding-top: 6rem !important;
+}
+
+.\!pt-28 {
+  padding-top: 7rem !important;
+}
+
+.pl-14 {
+  padding-left: 3.5rem;
 }
 
 .text-center {
