@@ -602,6 +602,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -1.5rem;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -783,6 +787,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-auto {
   width: auto;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .min-w-\[50px\] {
@@ -1411,6 +1423,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
 .from-neutral-800 {
   --tw-gradient-from: #262626;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(38 38 38 / 0));
@@ -1421,12 +1437,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0));
 }
 
+.from-transparent {
+  --tw-gradient-from: transparent;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 0 0 / 0));
+}
+
 .via-neutral-800 {
   --tw-gradient-stops: var(--tw-gradient-from), #262626, var(--tw-gradient-to, rgb(38 38 38 / 0));
 }
 
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-neutral-900 {
+  --tw-gradient-to: #171717;
+}
+
+.to-red-900 {
+  --tw-gradient-to: #7f1d1d;
+}
+
+.to-neutral-800 {
+  --tw-gradient-to: #262626;
 }
 
 .fill-green-500 {
@@ -1724,6 +1757,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[70px\] {
   font-size: 70px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
 }
 
 .font-bold {
