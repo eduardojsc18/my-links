@@ -650,6 +650,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
+.z-\[999\] {
+  z-index: 999;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1190,6 +1194,51 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-rubberBand {
   -webkit-animation: 1s both rubberBand;
           animation: 1s both rubberBand;
+}
+
+@-webkit-keyframes bounceInDown {
+  from {
+    transform: translate3d(0, calc(-1 * var(--animate-distance, 1000px)), 0) scale3d(1, 3, 1);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0) scale3d(1, 0.9, 1);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0) scale3d(1, 0.95, 1);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0) scale3d(1, 0.985, 1);
+  }
+}
+
+@keyframes bounceInDown {
+  from {
+    transform: translate3d(0, calc(-1 * var(--animate-distance, 1000px)), 0) scale3d(1, 3, 1);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0) scale3d(1, 0.9, 1);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0) scale3d(1, 0.95, 1);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0) scale3d(1, 0.985, 1);
+  }
+}
+
+.animate-bounceInDown {
+  -webkit-animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceInDown;
+          animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceInDown;
 }
 
 .snap-x {
@@ -2053,6 +2102,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-delay-1s {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.animate-delay-\[700ms\] {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
+.animate-delay-\[900ms\] {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.animate-delay-\[1000ms\] {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+.animate-delay-\[1300ms\] {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+
+.animate-delay-\[1200ms\] {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
 }
 
 .scrollbar {

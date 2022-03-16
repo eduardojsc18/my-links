@@ -197,7 +197,7 @@
 
                     </div>
 
-                    <span class="-z-10 absolute bottom-full border-l border-dashed h-[500px] -top-5 left-[45px] animate-fadeInDown animate-delay-[400ms] border-neutral-700/50"></span>
+                    <span class="-z-10 absolute bottom-full border-l border-dashed h-[500px] -top-5 left-[45px] animate-bounceInDown animate-delay-[1300ms] border-neutral-700/50"></span>
 
                 </div>
 
@@ -213,7 +213,7 @@
 
     </header>
 
-    <main class="relative mt-[780px] z-50 ">
+    <main class="z-[999] relative mt-[780px]">
 
         <a class="absolute bottom-full right-5"
            href="#content-main"
@@ -415,7 +415,159 @@
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <div class="swiper-wrapper">
+
+                            <template x-for="i in 3">
+
+                                <div class="swiper-slide ">
+                                    <div class="group ">
+
+                                        <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                            <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                                 src="https://picsum.photos/300/230"
+                                                 alt=""
+                                                 loading="lazy"
+                                            >
+                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                        </div>
+
+                                        <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
+
+                                            <p class="font-[500] text-neutral-100 drop-shadow">
+                                                Share Links
+                                            </p>
+
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
+                                            </p>
+
+                                            <div class="flex items-center justify-start pt-1">
+                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                    📎 Acessar
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </template>
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="space-y-5 pb-10">
+
+                    <div class="relative">
+                        <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
+                            <div class="relative">
+                                🛠️
+                                <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
+                            </div>
+                        </div>
+                        <div class="z-10 space-y-1">
+                            <h3 class="text-neutral-100 text-3xl drop-shadow font-bold pl-12">Ferramentas</h3>
+                            <p class="text-sm font-thin text-neutral-100 pl-16">Ferramentas e plugins que utilizo</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper !-mx-10 !px-10 !-mt-10 !pt-20 !pb-12 relative">
+
+                        <div class="absolute right-10 top-0 flex items-center justify-end">
+                            <div class="flex items-center overflow-hidden rounded-3xl text-neutral-100 bg-neutral-800 border border-neutral-900/20 shadow-xl">
+                                <div class="px-3 py-2 transition-all product-button-prev hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </div>
+                                <div class="px-3 py-2 transition-all product-button-next hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-wrapper">
+
+                            <template x-for="i in 3">
+
+                                <div class="swiper-slide ">
+                                    <div class="group ">
+
+                                        <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                            <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                                 src="https://picsum.photos/300/230"
+                                                 alt=""
+                                                 loading="lazy"
+                                            >
+                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                        </div>
+
+                                        <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
+
+                                            <p class="font-[500] text-neutral-100 drop-shadow">
+                                                Share Links
+                                            </p>
+
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
+                                            </p>
+
+                                            <div class="flex items-center justify-start pt-1">
+                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                    📎 Acessar
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </template>
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="space-y-5 pb-10">
+
+                    <div class="relative">
+                        <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
+                            <div class="relative">
+                                💡
+                                <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
+                            </div>
+                        </div>
+                        <div class="z-10 space-y-1">
+                            <h3 class="text-neutral-100 text-3xl drop-shadow font-bold pl-12">Sem ideias?</h3>
+                            <p class="text-sm font-thin text-neutral-100 pl-16">Lugares para tirar umas ideias aleatorias</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper !-mx-10 !px-10 !-mt-10 !pt-20 !pb-12 relative">
+
+                        <div class="absolute right-10 top-0 flex items-center justify-end">
+                            <div class="flex items-center overflow-hidden rounded-3xl text-neutral-100 bg-neutral-800 border border-neutral-900/20 shadow-xl">
+                                <div class="px-3 py-2 transition-all product-button-prev hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </div>
+                                <div class="px-3 py-2 transition-all product-button-next hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="swiper-wrapper">
 
                             <template x-for="i in 3">
