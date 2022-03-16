@@ -231,7 +231,54 @@
 
             <div class="max-w-[850px] mx-auto">
 
-                <section class="space-y-5 pb-10">
+                <section class="space-y-5 pb-10"
+                         x-data="{
+                            frameworks: [
+                                {
+                                    name: 'TailwindCSS',
+                                    image: 'tailwindcss.svg',
+                                    description: 'Um framework CSS de primeira utilidade com classes como flex, pt-4, text-center e rotate-90 que podem ser compostas para construir qualquer design, diretamente em sua marcação.',
+                                    link: 'https://tailwindcss.com/'
+                                },
+                                {
+                                    name: 'Alpine.JS',
+                                    image: 'alpinejs.svg',
+                                    description: 'Alpine é uma ferramenta robusta e mínima para compor o comportamento diretamente em sua marcação. Pense nisso como jQuery para a web moderna. Coloque uma tag de script e vá em frente.',
+                                    link: 'https://alpinejs.dev/'
+                                },
+                                {
+                                    name: 'Livewire',
+                                    image: 'livewire.svg',
+                                    description: 'O Livewire é um framework full-stack para Laravel que simplifica a construção de interfaces dinâmicas, sem deixar o conforto do Laravel.',
+                                    link: 'https://laravel-livewire.com/'
+                                },
+                                {
+                                    name: 'Laravel',
+                                    image: 'laravel.svg',
+                                    description: 'Laravel é um framework de aplicação web com sintaxe expressiva e elegante. Nós já lançamos as bases - liberando você para criar sem se preocupar com as pequenas coisas.',
+                                    link: 'https://laravel.com/'
+                                },
+                                {
+                                    name: 'Vue.JS',
+                                    image: 'vuejs.svg',
+                                    description: 'Uma estrutura acessível, de alto desempenho e versátil para a construção de interfaces de usuário da web.',
+                                    link: 'https://vuejs.org/'
+                                },
+                                {
+                                    name: 'Inertia.Js',
+                                    image: 'inertiajs.svg',
+                                    description: 'O Inertia.js permite que você crie rapidamente aplicativos React, Vue e Svelte modernos de página única usando roteamento e controladores clássicos do lado do servidor.',
+                                    link: 'https://inertiajs.com/'
+                                },
+                                {
+                                    name: 'Nuxt.Js',
+                                    image: 'nuxtjs.svg',
+                                    description: 'Crie seu próximo aplicativo Vue.js com confiança usando o Nuxt. Uma estrutura de código aberto que torna o desenvolvimento web simples e poderoso.',
+                                    link: 'https://nuxtjs.org/'
+                                }
+                            ]
+                         }"
+                >
 
                     <div class="relative">
                         <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
@@ -265,32 +312,30 @@
 
                         <div class="swiper-wrapper">
 
-                            <template x-for="i in 3">
+                            <template x-for="(framework, index) in frameworks" :key="index">
 
                                 <div class="swiper-slide ">
-                                    <div class="group ">
+                                    <div class="group">
 
                                         <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
                                             <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
-                                                 src="https://picsum.photos/300/230"
+                                                 :src="'./assets/img/frameworks/' + framework.image"
                                                  alt=""
                                                  loading="lazy"
                                             >
-                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                            <div class="absolute bottom-0 w-full h-36 bg-gradient-to-t from-neutral-800 to-transparent z-10 "></div>
                                         </div>
 
                                         <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
 
-                                            <p class="font-[500] text-neutral-100 drop-shadow">
-                                                Share Links
-                                            </p>
+                                            <p class="font-[500] text-neutral-100 drop-shadow" x-text="framework.name"> </p>
 
-                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
-                                            </p>
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow" x-text="framework.description"> </p>
 
                                             <div class="flex items-center justify-start pt-1">
-                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                <a :href="framework.link" target="_blank"
+                                                   class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
+                                                >
                                                     📎 Acessar
                                                 </a>
                                             </div>
