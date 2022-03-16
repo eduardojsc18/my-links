@@ -18,11 +18,7 @@
 @layer components {
 
     .active .info-card {
-        @apply scale-105 shadow-2xl;
-    }
-
-    .active .line-clamp-3 {
-        @apply !line-clamp-none
+        @apply scale-105 shadow-2xl bg-neutral-800/80;
     }
 
 }

@@ -524,13 +524,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  background-color: rgb(38 38 38 / 0.8);
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.active .line-clamp-3 {
-  -webkit-line-clamp: unset !important;
 }
 
 .visible {
@@ -765,36 +762,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 110%;
 }
 
+.h-\[600px\] {
+  height: 600px;
+}
+
 .h-4 {
   height: 1rem;
 }
 
 .h-\[230px\] {
   height: 230px;
-}
-
-.h-\[555px\] {
-  height: 555px;
-}
-
-.\!h-\[555px\] {
-  height: 555px !important;
-}
-
-.h-\[580px\] {
-  height: 580px;
-}
-
-.h-\[590px\] {
-  height: 590px;
-}
-
-.h-\[600px\] {
-  height: 600px;
-}
-
-.max-h-\[555px\] {
-  max-height: 555px;
 }
 
 .min-h-screen {
@@ -827,10 +804,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-4 {
   width: 1rem;
-}
-
-.w-\[580px\] {
-  width: 580px;
 }
 
 .min-w-\[50px\] {
@@ -1460,10 +1433,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4rem;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
 .pl-8 {
   padding-left: 2rem;
 }
@@ -1478,6 +1447,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .\!pb-12 {
   padding-bottom: 3rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-center {
@@ -1824,13 +1797,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-}
-
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 
 .hover\:scale-125:hover {
