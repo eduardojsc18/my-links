@@ -1144,6 +1144,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1.25rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1255,6 +1263,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-neutral-800\/60 {
   background-color: rgb(38 38 38 / 0.6);
+}
+
+.bg-blue-900\/5 {
+  background-color: rgb(30 58 138 / 0.05);
+}
+
+.bg-blue-900\/10 {
+  background-color: rgb(30 58 138 / 0.1);
+}
+
+.bg-\[\#6879d9\]\/\[10\] {
+  background-color: rgb(104 121 217 / 10);
+}
+
+.bg-purple-900\/10 {
+  background-color: rgb(88 28 135 / 0.1);
+}
+
+.bg-purple-900\/5 {
+  background-color: rgb(88 28 135 / 0.05);
 }
 
 .bg-gradient-to-r {
@@ -1793,12 +1821,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(30 58 138 / var(--tw-border-opacity));
 }
 
+.hover\:border-purple-600:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(147 51 234 / var(--tw-border-opacity));
+}
+
+.hover\:border-purple-800:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 33 168 / var(--tw-border-opacity));
+}
+
 .hover\:bg-neutral-900\/60:hover {
   background-color: rgb(23 23 23 / 0.6);
 }
 
 .hover\:bg-blue-900\/10:hover {
   background-color: rgb(30 58 138 / 0.1);
+}
+
+.hover\:bg-blue-900\/20:hover {
+  background-color: rgb(30 58 138 / 0.2);
+}
+
+.hover\:bg-purple-900\/20:hover {
+  background-color: rgb(88 28 135 / 0.2);
+}
+
+.hover\:bg-purple-900\/10:hover {
+  background-color: rgb(88 28 135 / 0.1);
 }
 
 .hover\:shadow-2xl:hover {

@@ -352,7 +352,54 @@
 
                 </section>
 
-                <section class="space-y-5 pb-10">
+                <section class="space-y-5 pb-10"
+                         x-data="{
+                            myProjects: [
+                                {
+                                    name: 'Seu Zé',
+                                    description: 'Seu Zé é uma Landing Page voltado para uma empresa de produtos naturais da fazenda',
+                                    image: 'seuze.svg',
+                                    link: 'https://github.com/eduardojsc18/seuze',
+                                    linkGitHubPages: 'https://eduardojsc18.github.io/seuze/resources/view/'
+                                },
+                                {
+                                    name: 'To do List',
+                                    description: '[ #STUDYING | #JAVASCRIPTFULLSTACK ] - Projeto desenvolvido através do treinamento FULL STACK JAVSCRIPT',
+                                    image: 'todolist.svg',
+                                    link: 'https://github.com/eduardojsc18/my-portfolio',
+                                    linkGitHubPages: 'https://eduardojsc18.github.io/my-portfolio/resources/view/'
+                                },
+                                {
+                                    name: 'Meu Portfólio',
+                                    description: 'Olá visitante! Em primeiro lugar, bem-vindo ao meu portfólio. Aqui conto um pouco da minha experiência na área de desenvolvimento. Sinta-se em casa! 😁',
+                                    image: 'myportfolio.svg',
+                                    link: 'https://github.com/eduardojsc18/my-portfolio',
+                                    linkGitHubPages: 'https://eduardojsc18.github.io/my-portfolio/resources/view/'
+                                },
+                                {
+                                    name: 'Make Your Burguer',
+                                    description: '[#STUDING | #VUEJS] - Sistema de montar pedidos de uma hamburgaria.',
+                                    image: 'makeyourburguer.svg',
+                                    link: 'https://github.com/eduardojsc18/make-your-burger',
+                                    linkGitHubPages: ''
+                                },
+                                {
+                                    name: 'Share',
+                                    description: 'Sistema de compartilhamento de imagens utilizando Web Share API',
+                                    image: 'share.svg',
+                                    link: 'https://github.com/eduardojsc18/share',
+                                    linkGitHubPages: 'https://eduardojsc18.github.io/share/src/'
+                                },
+                                {
+                                    name: 'Landing Page',
+                                    description: '[STUDYNG] - Landing Page for Health Insurance Broker',
+                                    image: 'landingpage.svg',
+                                    link: 'https://github.com/eduardojsc18/ladingpage-health-insurance-broker',
+                                    linkGitHubPages: 'https://eduardojsc18.github.io/ladingpage-health-insurance-broker/resources/view/'
+                                }
+                            ]
+                         }"
+                >
 
                     <div class="relative">
                         <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
@@ -386,14 +433,14 @@
 
                         <div class="swiper-wrapper">
 
-                            <template x-for="i in 3">
+                            <template x-for="(project, index) in myProjects" :key="index">
 
                                 <div class="swiper-slide ">
                                     <div class="group ">
 
                                         <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
                                             <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
-                                                 src="https://picsum.photos/300/230"
+                                                 :src="'assets/img/myProjects/' + project.image"
                                                  alt=""
                                                  loading="lazy"
                                             >
@@ -402,17 +449,24 @@
 
                                         <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
 
-                                            <p class="font-[500] text-neutral-100 drop-shadow">
-                                                Share Links
-                                            </p>
+                                            <p class="font-[500] text-neutral-100 drop-shadow" x-text="project.name"></p>
 
-                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
-                                            </p>
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow" x-text="project.description"></p>
 
-                                            <div class="flex items-center justify-start pt-1">
-                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                            <div class="flex items-center justify-start pt-1 gap-3">
+                                                <a x-show="project.linkGitHubPages"
+                                                   :href="project.linkGitHubPages"
+                                                   class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-blue-900/5 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
+                                                >
                                                     📎 Acessar
+                                                </a>
+                                                <a :href="project.link"
+                                                   class="flex items-center justify-center flex-grow gap-2 font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-purple-900/5 hover:bg-purple-900/10 border border-transparent hover:border-purple-800 shadow-lg hover:shadow-xl transition-all"
+                                                >
+                                                    <svg class="fill-[#6879d9]" height="20" width="20" aria-hidden="true" viewBox="0 0 16 16" version="1.1"  data-view-component="true">
+                                                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                                                    </svg>
+                                                    Acessar
                                                 </a>
                                             </div>
 
