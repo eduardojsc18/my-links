@@ -228,7 +228,7 @@
             </div>
         </a>
 
-        <div id="content-main" class="px-10 pt-16 overflow-hidden rounded-t-3xl animate-fadeInUp animate-delay-1s bg-neutral-800 shadow-[0_10px_40px_-5px] ">
+        <div id="content-main" class="px-10 pt-16 overflow-hidden rounded-t-3xl md:rounded-t-none animate-fadeInUp animate-delay-1s bg-neutral-800 shadow-[0_10px_40px_-5px] ">
 
             <div class="max-w-[850px] mx-auto">
 
@@ -247,7 +247,23 @@
                         </div>
                     </div>
 
-                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                    <div class="swiper !-mx-10 !px-10 !-mt-10 !pt-20 !pb-12 relative">
+
+                        <div class="absolute right-10 top-0 flex items-center justify-end">
+                            <div class="flex items-center overflow-hidden rounded-3xl text-neutral-100 bg-neutral-800 border border-neutral-900/20 shadow-xl">
+                                <div class="px-3 py-2 transition-all product-button-prev hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </div>
+                                <div class="px-3 py-2 transition-all product-button-next hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="swiper-wrapper">
 
                             <template x-for="i in 3">
@@ -307,7 +323,23 @@
                         </div>
                     </div>
 
-                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                    <div class="swiper !-mx-10 !px-10 !-mt-10 !pt-20 !pb-12 relative">
+
+                        <div class="absolute right-10 top-0 flex items-center justify-end">
+                            <div class="flex items-center overflow-hidden rounded-3xl text-neutral-100 bg-neutral-800 border border-neutral-900/20 shadow-xl">
+                                <div class="px-3 py-2 transition-all product-button-prev hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </div>
+                                <div class="px-3 py-2 transition-all product-button-next hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="swiper-wrapper">
 
                             <template x-for="i in 3">
@@ -367,7 +399,23 @@
                         </div>
                     </div>
 
-                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                    <div class="swiper !-mx-10 !px-10 !-mt-10 !pt-20 !pb-12 relative">
+
+                        <div class="absolute right-10 top-0 flex items-center justify-end">
+                            <div class="flex items-center overflow-hidden rounded-3xl text-neutral-100 bg-neutral-800 border border-neutral-900/20 shadow-xl">
+                                <div class="px-3 py-2 transition-all product-button-prev hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </div>
+                                <div class="px-3 py-2 transition-all product-button-next hover:bg-neutral-900/60 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:scale-125 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="swiper-wrapper">
 
                             <template x-for="i in 3">
@@ -435,7 +483,23 @@
         let swiper = new Swiper('.swiper', {
             slidesPerView: 1.01,
             spaceBetween: 25,
-            loop: true
+            loop: true,
+
+            breakpoints: {
+                480: {
+                    slidesPerView: 1.2,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                }
+            },
+
+            navigation: {
+                nextEl: '.product-button-next',
+                prevEl: '.product-button-prev',
+            },
+
         });
     </script>
 
