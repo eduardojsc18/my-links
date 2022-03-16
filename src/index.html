@@ -40,6 +40,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
 </head>
 <body class="bg-neutral-800 box-content flex flex-col min-h-screen font-Raleway h-32 scrollbar scrollbar-thin scrollbar-thumb-neutral-900 scrollbar-track-neutral-800/30"
       x-data="{}"
@@ -226,53 +228,180 @@
             </div>
         </a>
 
-        <div id="content-main" class="p-10 overflow-hidden rounded-t-3xl animate-fadeInUp animate-delay-1s !bg-neutral-800/90 !backdrop-blur-lg shadow-[0_10px_40px_-5px] ">
+        <div id="content-main" class="px-10 pt-16 overflow-hidden rounded-t-3xl animate-fadeInUp animate-delay-1s bg-neutral-800 shadow-[0_10px_40px_-5px] ">
 
             <div class="max-w-[850px] mx-auto">
 
-                <template x-for="i in 5">
-                    <section class="space-y-5 pb-10">
+                <section class="space-y-5 pb-10">
 
-                        <h3 class="text-neutral-100 text-2xl font-bold px-3"> Componentes </h3>
+                    <div class="relative">
+                        <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
+                            🦄
+                        </div>
+                        <div class="z-10 space-y-1">
+                            <h3 class="text-neutral-100 text-3xl drop-shadow font-bold pl-12">Frameworks</h3>
+                            <p class="text-sm font-thin text-neutral-100 pl-24">que geralmente utilizo...</p>
+                        </div>
+                    </div>
 
-                        <div class="flex flex-nowrap overflow-hidden -mx-10">
+                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                        <div class="swiper-wrapper">
 
                             <template x-for="i in 3">
 
-                                <div class="min-w-[330px] group pl-6 pt-3 pb-14">
+                                <div class="swiper-slide ">
+                                    <div class="group ">
 
-                                    <img class="rounded-2xl overflow-hidden object-cover object-center bg-neutral-700 w-full h-[230px]"
-                                         src="https://picsum.photos/300/230"
-                                         alt=""
-                                         loading="lazy"
-                                    >
+                                        <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                            <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                                 src="https://picsum.photos/300/230"
+                                                 alt=""
+                                                 loading="lazy"
+                                            >
+                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                        </div>
 
-                                    <div class="p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
+                                        <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
 
-                                        <p class="font-[500] text-neutral-100 drop-shadow">
-                                            Share Links
-                                        </p>
+                                            <p class="font-[500] text-neutral-100 drop-shadow">
+                                                Share Links
+                                            </p>
 
-                                        <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
-                                        </p>
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
+                                            </p>
 
-                                        <div class="flex items-center justify-start pt-1">
-                                            <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
-                                                📎 Acessar
-                                            </a>
+                                            <div class="flex items-center justify-start pt-1">
+                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                    📎 Acessar
+                                                </a>
+                                            </div>
+
                                         </div>
 
                                     </div>
-
                                 </div>
 
                             </template>
 
                         </div>
+                    </div>
 
-                    </section>
-                </template>
+                </section>
+
+                <section class="space-y-5 pb-10">
+
+                    <div class="relative">
+                        <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
+                            🎨
+                        </div>
+                        <div class="z-10 space-y-1">
+                            <h3 class="text-neutral-100 text-3xl drop-shadow font-bold pl-12">Meus Projetos</h3>
+                            <p class="text-sm font-thin text-neutral-100 pl-24">projetos publicos</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                        <div class="swiper-wrapper">
+
+                            <template x-for="i in 3">
+
+                                <div class="swiper-slide ">
+                                    <div class="group ">
+
+                                        <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                            <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                                 src="https://picsum.photos/300/230"
+                                                 alt=""
+                                                 loading="lazy"
+                                            >
+                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                        </div>
+
+                                        <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
+
+                                            <p class="font-[500] text-neutral-100 drop-shadow">
+                                                Share Links
+                                            </p>
+
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
+                                            </p>
+
+                                            <div class="flex items-center justify-start pt-1">
+                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                    📎 Acessar
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </template>
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="space-y-5 pb-10">
+
+                    <div class="relative">
+                        <div class="-z-10 absolute -top-6 -left-2 opacity-20 text-[70px]">
+                            🖼️
+                        </div>
+                        <div class="z-10 space-y-1">
+                            <h3 class="text-neutral-100 text-3xl drop-shadow font-bold pl-12">SVG</h3>
+                            <p class="text-sm font-thin text-neutral-100 pl-24">repositorios de SVG <small class="text-[10px]">#free</small></p>
+                        </div>
+                    </div>
+
+                    <div class="swiper !-mx-10 !px-10 !pt-3 !pb-12">
+                        <div class="swiper-wrapper">
+
+                            <template x-for="i in 3">
+
+                                <div class="swiper-slide ">
+                                    <div class="group ">
+
+                                        <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                            <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                                 src="https://picsum.photos/300/230"
+                                                 alt=""
+                                                 loading="lazy"
+                                            >
+                                            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-900 to-transparent z-10 "></div>
+                                        </div>
+
+                                        <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 group-hover:bg-neutral-800/80 backdrop-blur shadow-xl hover:shadow-2xl group-hover:scale-105 transition-all rounded-3xl ">
+
+                                            <p class="font-[500] text-neutral-100 drop-shadow">
+                                                Share Links
+                                            </p>
+
+                                            <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna risus, eleifend sit amet tellus in
+                                            </p>
+
+                                            <div class="flex items-center justify-start pt-1">
+                                                <a href="" class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-800 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all">
+                                                    📎 Acessar
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </template>
+
+                        </div>
+                    </div>
+
+                </section>
 
             </div>
 
@@ -287,9 +416,19 @@
 
     <!-- Alpine Plugins -->
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-
     <!-- Alpine Core -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- SwiperJS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        let swiper = new Swiper('.swiper', {
+            slidesPerView: 1.01,
+            spaceBetween: 25,
+            loop: true
+        });
+    </script>
 
 </body>
 </html>
