@@ -212,9 +212,9 @@
 
     </header>
 
-    <main class="pt-14 !translate-y-[780px] rounded-t-3xl md:rounded-t-none bg-neutral-800 shadow-[0_10px_40px_-5px] lg:animate-fadeIn lg:animate-delay-[2000ms]">
+    <main class="z-[998] pt-14 !mt-[780px] rounded-3xl md:rounded-none bg-neutral-800 shadow-[0_5px_20px_-2px] lg:animate-fadeIn lg:animate-delay-[2000ms]">
 
-        <div class="max-w-[850px] space-y-10 mx-auto">
+        <div class="max-w-[850px] mx-auto space-y-10 ">
 
             <section class="space-y-5">
 
@@ -475,8 +475,20 @@
 
     </main>
 
-    <footer>
+    <footer class="relative mb-24">
+        <div class="fixed bottom-0 bg-neutral-900 w-full lg:animate-fadeIn lg:animate-delay-[2500ms]">
 
+            <div class="max-w-[680px] mx-auto px-10 pt-10 pb-5 text-center  space-y-3 ">
+                <div class="group font-[500] text-neutral-200">
+                    <p class="group-hover:animate-bounceInUp group-hover:animate-bounceOutUp text-xs ">Desenvolvido com carinho! 💖</p>
+                    <p class="hidden group-hover:block group-hover:animate-bounceInUp text-lg">Carinho da força do ódio 😂</p>
+                </div>
+                <div class="text-xs font-[300] text-neutral-300">
+                     © <span x-data="{data: new Date().getFullYear()}" x-text="data"></span> - São Paulo, Brazil
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <script>
