@@ -531,6 +531,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 1024px) {
   .active .info-card {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .active .info-card {
     background-color: rgb(38 38 38 / 0.6);
   }
 }
@@ -616,12 +621,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 1.25rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.top-12 {
+  top: 3rem;
 }
 
-.-bottom-24 {
-  bottom: -6rem;
+.bottom-0 {
+  bottom: 0px;
 }
 
 .z-0 {
@@ -656,6 +661,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
+.z-\[1000\] {
+  z-index: 1000;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -678,28 +687,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: -4rem;
 }
 
-.mb-24 {
-  margin-bottom: 6rem;
-}
-
-.mt-\[100vh\] {
-  margin-top: 100vh;
-}
-
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .-mt-5 {
   margin-top: -1.25rem;
-}
-
-.-mt-10 {
-  margin-top: -2.5rem;
-}
-
-.\!-mb-24 {
-  margin-bottom: -6rem !important;
 }
 
 .box-content {
@@ -762,6 +751,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 230px;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-\[450px\] {
+  height: 450px;
+}
+
+.h-\[460px\] {
+  height: 460px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -804,6 +805,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.\!translate-y-\[780px\] {
+  --tw-translate-y: 780px !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
 .rotate-90 {
@@ -1063,6 +1069,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 1rem;
 }
 
+.rounded-t-3xl {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1109,8 +1120,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(64 64 64 / 0.1);
 }
 
-.bg-neutral-800\/\[0\.95\] {
-  background-color: rgb(38 38 38 / 0.95);
+.bg-neutral-800\/80 {
+  background-color: rgb(38 38 38 / 0.8);
 }
 
 .bg-blue-900\/5 {
@@ -1127,6 +1138,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(\'\.\.\/img\/wave\.svg\'\)\] {
+  background-image: url('../img/wave.svg');
 }
 
 .from-transparent {
@@ -1150,6 +1165,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-neutral-800\/90 {
+  --tw-gradient-to: rgb(38 38 38 / 0.9);
 }
 
 .fill-green-500 {
@@ -1178,6 +1197,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .fill-current {
   fill: currentColor;
+}
+
+.fill-neutral-300 {
+  fill: #d4d4d4;
 }
 
 .object-cover {
@@ -1249,8 +1272,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.75rem;
 }
 
-.pt-14 {
-  padding-top: 3.5rem;
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .pl-8 {
@@ -1279,10 +1302,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-5 {
   padding-bottom: 1.25rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
 }
 
 .text-center {
@@ -1346,6 +1365,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 400;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
@@ -1390,9 +1413,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-\[0_5px_20px_-2px\] {
-  --tw-shadow: 0 5px 20px -2px;
-  --tw-shadow-colored: 0 5px 20px -2px var(--tw-shadow-color);
+.shadow-\[0_-10px_20px_-20px\] {
+  --tw-shadow: 0 -10px 20px -20px;
+  --tw-shadow-colored: 0 -10px 20px -20px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1626,12 +1649,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.group:hover .group-hover\:block {
-  display: block;
-}
-
-.group:hover .group-hover\:hidden {
-  display: none;
+.group:hover .group-hover\:-translate-y-1 {
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:scale-110 {
@@ -1640,68 +1660,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@keyframes bounceInUp {
-  from {
-    transform: translate3d(0, var(--animate-distance, 1000px), 0) scale3d(1, 3, 1);
-    opacity: 0;
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate3d(0, -20px, 0) scale3d(1, 0.9, 1);
-  }
-
-  75% {
-    transform: translate3d(0, 10px, 0) scale3d(1, 0.95, 1);
-  }
-
-  90% {
-    transform: translate3d(0, -5px, 0) scale3d(1, 0.985, 1);
-  }
+.group:hover .group-hover\:bg-neutral-800\/100 {
+  background-color: rgb(38 38 38 / 1);
 }
 
-.group:hover .group-hover\:animate-bounceInUp {
-  -webkit-animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceInUp;
-          animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceInUp;
-}
-
-@-webkit-keyframes bounceOutUp {
-  20% {
-    transform: translate3d(0, -10px, 0) scale3d(1, 0.985, 1);
-  }
-
-  40%, 45% {
-    opacity: 1;
-    transform: translate3d(0, 20px, 0) scale3d(1, 0.9, 1);
-  }
-
-  to {
-    transform: translate3d(0, calc(-1 * var(--animate-distance, 1000px)), 0) scale3d(1, 3, 1);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes bounceOutUp {
-  20% {
-    transform: translate3d(0, -10px, 0) scale3d(1, 0.985, 1);
-  }
-
-  40%, 45% {
-    opacity: 1;
-    transform: translate3d(0, 20px, 0) scale3d(1, 0.9, 1);
-  }
-
-  to {
-    transform: translate3d(0, calc(-1 * var(--animate-distance, 1000px)), 0) scale3d(1, 3, 1);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.group:hover .group-hover\:animate-bounceOutUp {
-  -webkit-animation: 1s both bounceOutUp;
-          animation: 1s both bounceOutUp;
+.group:hover .group-hover\:shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .group:active .group-active\:scale-125 {
@@ -1711,26 +1677,68 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
+  .md\:top-4 {
+    top: 1rem;
+  }
+
+  .md\:right-10 {
+    right: 2.5rem;
+  }
+
+  .md\:h-40 {
+    height: 10rem;
+  }
+
   .md\:rounded-none {
     border-radius: 0px;
+  }
+
+  .md\:bg-opacity-70 {
+    --tw-bg-opacity: 0.7;
+  }
+
+  .md\:bg-opacity-90 {
+    --tw-bg-opacity: 0.9;
+  }
+
+  .md\:bg-opacity-30 {
+    --tw-bg-opacity: 0.3;
+  }
+
+  .md\:bg-opacity-95 {
+    --tw-bg-opacity: 0.95;
+  }
+
+  .md\:backdrop-blur {
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  }
+
+  .md\:backdrop-blur-md {
+    --tw-backdrop-blur: blur(12px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 }
 
 @media (min-width: 1024px) {
-  @-webkit-keyframes fadeIn {
+  @-webkit-keyframes fadeInUp {
     from {
+      transform: translate3d(0, 100%, 0);
       opacity: 0;
     }
   }
-  @keyframes fadeIn {
+  @keyframes fadeInUp {
     from {
+      transform: translate3d(0, 100%, 0);
       opacity: 0;
     }
   }
 
-  .lg\:animate-fadeIn {
-    -webkit-animation: 1s both fadeIn;
-            animation: 1s both fadeIn;
+  .lg\:animate-fadeInUp {
+    -webkit-animation: 1s both fadeInUp;
+            animation: 1s both fadeInUp;
   }
 
   .lg\:bg-neutral-800\/50 {
@@ -1743,13 +1751,12 @@ Ensure the default browser behavior of the `hidden` attribute.
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
-  .lg\:animate-delay-\[2000ms\] {
-    -webkit-animation-delay: 2000ms;
-            animation-delay: 2000ms;
+  .lg\:animate-delay-\[1500ms\] {
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
   }
 
-  .lg\:animate-delay-\[2500ms\] {
-    -webkit-animation-delay: 2500ms;
-            animation-delay: 2500ms;
+  .group:hover .group-hover\:lg\:bg-neutral-800\/60 {
+    background-color: rgb(38 38 38 / 0.6);
   }
 }
