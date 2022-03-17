@@ -54,7 +54,7 @@
 
                 <div class="overflow-hidden rounded-3xl h-36 w-full">
                     <img class="w-full h-full object-cover bg-neutral-900"
-                         src="assets/img/istockphoto-1225608964-170667a.webp"
+                         src="assets/img/4cDI.gif"
                          alt=""
                          title=""
                          loading="eager"
@@ -212,17 +212,17 @@
 
     </header>
 
-    <main class="!translate-y-[780px] rounded-t-3xl md:rounded-t-none bg-neutral-800 shadow-[0_10px_40px_-5px] animate-fadeInUp animate-slow animate-delay-[500ms]">
+    <main class="pt-14 !translate-y-[780px] rounded-t-3xl md:rounded-t-none bg-neutral-800 shadow-[0_10px_40px_-5px] lg:animate-fadeIn lg:animate-delay-[2000ms]">
 
-        <div class="pt-14 max-w-[850px] space-y-10 mx-auto">
+        <div class="max-w-[850px] space-y-10 mx-auto">
 
             <section class="space-y-5">
 
                 <div class="relative px-10">
-                    <div class="-z-10 absolute -top-6 left-3 opacity-20 text-[70px]">
+                    <div class="-z-10 absolute -top-6 left-3 opacity-50 text-[70px]">
                         <div class="relative">
                             🦄
-                            <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
+                            <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
                         </div>
                     </div>
                     <div class="z-10 space-y-1">
@@ -299,37 +299,35 @@
 
                         <template x-for="(framework, index) in frameworks" :key="index">
 
-                            <div class="swiper-slide">
-                                <div class="group">
+                            <div class="swiper-slide group">
 
-                                    <div class="-z-10 relative h-[230px] rounded-2xl overflow-hidden ">
-                                        <img class="z-0 object-cover object-center bg-neutral-700/10 w-full h-full z-0"
-                                             :src="'./assets/img/frameworks/' + framework.image"
-                                             :alt="framework.name"
-                                             :title="framework.name"
+                                <div class="-z-10 relative h-[230px] rounded-2xl overflow-hidden ">
+                                    <img class="z-0 object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                         :src="'./assets/img/frameworks/' + framework.image"
+                                         :alt="framework.name"
+                                         :title="framework.name"
+                                    >
+                                    <div class="absolute bottom-0 w-full h-full bg-gradient-to-t !from-neutral-900/80 to-transparent"></div>
+                                </div>
+
+                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 !bg-neutral-800/50 !backdrop-blur-xl shadow-xl group-hover:shadow-2xl group-hover:-mt-[4.5rem] transition-all rounded-3xl">
+
+                                    <p class="font-[500] text-lg text-neutral-100" x-text="framework.name"> </p>
+
+                                    <p class="font-[300] text-neutral-300 line-clamp-3 text-sm transition-all" x-text="framework.description"> </p>
+
+                                    <div class="flex items-center justify-start pt-1">
+                                        <a :href="framework.link"
+                                           :title="'Ver a documentação do framework ' + framework.name"
+                                           target="_blank"
+                                           class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-700/10 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
                                         >
-                                        <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-neutral-900/80 to-transparent"></div>
-                                    </div>
-
-                                    <div class="z-0 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/50 backdrop-blur shadow-xl transition-all rounded-3xl">
-
-                                        <p class="font-[500] text-neutral-100 drop-shadow" x-text="framework.name"> </p>
-
-                                        <p class="font-[400] text-neutral-300 text-sm drop-shadow transition-all" x-text="framework.description"> </p>
-
-                                        <div class="flex items-center justify-start pt-1">
-                                            <a :href="framework.link"
-                                               :title="'Ver a documentação do framework ' + framework.name"
-                                               target="_blank"
-                                               class="flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-neutral-700/10 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
-                                            >
-                                                📖 Ver Documentação
-                                            </a>
-                                        </div>
-
+                                            📖 Ver Documentação
+                                        </a>
                                     </div>
 
                                 </div>
+
                             </div>
 
                         </template>
@@ -343,10 +341,10 @@
             <section class="space-y-5">
 
                 <div class="relative px-10">
-                    <div class="-z-10 absolute -top-6 left-3 opacity-20 text-[70px]">
+                    <div class="-z-10 absolute -top-6 left-3 opacity-50 text-[70px]">
                         <div class="relative">
                             🎨
-                            <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
+                            <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-r from-transparent to-neutral-800 z-10"></div>
                         </div>
                     </div>
                     <div class="z-10 space-y-1">
@@ -423,48 +421,46 @@
 
                         <template x-for="(project, index) in myProjects" :key="index">
 
-                            <div class="swiper-slide ">
-                                <div class="group ">
+                            <div class="swiper-slide group">
 
-                                    <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
-                                        <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
-                                             :src="'assets/img/myProjects/' + project.image"
-                                             :alt="project.name"
-                                             :title="project.name"
+                                <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                    <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
+                                         :src="'assets/img/myProjects/' + project.image"
+                                         :alt="project.name"
+                                         :title="project.name"
+                                    >
+                                    <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-neutral-900/80 to-transparent z-10 "></div>
+                                </div>
+
+                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 !bg-neutral-800/50 !backdrop-blur-xl shadow-xl group-hover:shadow-2xl group-hover:-mt-[4.5rem] transition-all rounded-3xl">
+
+                                    <p class="font-[500] text-lg text-neutral-100" x-text="project.name"></p>
+
+                                    <p class="font-[300] text-neutral-300 line-clamp-3 text-sm transition-all" x-text="project.description"></p>
+
+                                    <div class="flex items-center justify-start pt-1 gap-3">
+                                        <a x-show="project.linkGitHubPages"
+                                           :href="project.linkGitHubPages"
+                                           :title="'Acessar ' + project.name + ' no GitHub Pages'"
+                                           target="_blank"
+                                           class="whitespace-nowrap flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-blue-900/5 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
                                         >
-                                        <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-neutral-900/80 to-transparent z-10 "></div>
-                                    </div>
-
-                                    <div class="z-20 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/60 backdrop-blur shadow-xl transition-all rounded-3xl info-card">
-
-                                        <p class="font-[500] text-neutral-100 drop-shadow" x-text="project.name"></p>
-
-                                        <p class="font-[400] text-neutral-300 line-clamp-2 text-sm drop-shadow" x-text="project.description"></p>
-
-                                        <div class="flex items-center justify-start pt-1 gap-3">
-                                            <a x-show="project.linkGitHubPages"
-                                               :href="project.linkGitHubPages"
-                                               :title="'Acessar ' + project.name + ' no GitHub Pages'"
-                                               target="_blank"
-                                               class="whitespace-nowrap flex items-center font-[400] text-neutral-300 text-sm px-4 py-3 rounded-xl bg-blue-900/5 hover:bg-blue-900/10 border border-transparent hover:border-blue-900 shadow-lg hover:shadow-xl transition-all"
-                                            >
-                                                📎 Acessar
-                                            </a>
-                                            <a :href="project.link"
-                                               title="Repositório"
-                                               target="_blank"
-                                               class="flex items-center justify-center flex-grow gap-2 font-[400] text-neutral-300 text-sm py-3 rounded-xl bg-purple-900/5 hover:bg-purple-900/10 border border-transparent hover:border-purple-800 shadow-lg hover:shadow-xl transition-all"
-                                            >
-                                                <svg class="fill-[#6879d9]" height="15" width="15" aria-hidden="true" viewBox="0 0 16 16" version="1.1"  data-view-component="true">
-                                                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                                                </svg>
-                                                Repositório
-                                            </a>
-                                        </div>
-
+                                            📎 Acessar
+                                        </a>
+                                        <a :href="project.link"
+                                           title="Repositório"
+                                           target="_blank"
+                                           class="flex items-center justify-center flex-grow gap-2 font-[400] text-neutral-300 text-sm py-3 rounded-xl bg-purple-900/5 hover:bg-purple-900/10 border border-transparent hover:border-purple-800 shadow-lg hover:shadow-xl transition-all"
+                                        >
+                                            <svg class="fill-[#6879d9]" height="15" width="15" aria-hidden="true" viewBox="0 0 16 16" version="1.1"  data-view-component="true">
+                                                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                                            </svg>
+                                            Repositório
+                                        </a>
                                     </div>
 
                                 </div>
+
                             </div>
 
                         </template>
@@ -485,6 +481,7 @@
 
     <script>
         function loadPage(){
+
             document.onreadystatechange = function() {
                 if (document.readyState !== "complete") {
                     document.querySelector("body").style.visibility = "hidden";
@@ -492,6 +489,11 @@
                     document.querySelector("body").style.visibility = "visible";
                 }
             };
+
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+
         }
     </script>
 

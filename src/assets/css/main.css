@@ -633,10 +633,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: -10;
 }
 
-.z-\[999\] {
-  z-index: 999;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -719,6 +715,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 230px;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -765,11 +765,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-grow {
   flex-grow: 1;
-}
-
-.translate-y-\[780px\] {
-  --tw-translate-y: 780px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .\!translate-y-\[780px\] {
@@ -961,6 +956,243 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: 1s both fadeInUp;
 }
 
+@-webkit-keyframes bounceIn {
+  from {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+}
+
+.animate-bounceIn {
+  -webkit-animation: 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceIn;
+          animation: 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceIn;
+}
+
+@-webkit-keyframes zoomInDown {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, calc(-1 * var(--animate-distance, 2000px)), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, calc(-1 * var(--animate-distance, 2000px)), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+  }
+}
+
+.animate-zoomInDown {
+  -webkit-animation: 1s both zoomInDown;
+          animation: 1s both zoomInDown;
+}
+
+@-webkit-keyframes zoomInUp {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, var(--animate-distance, 2000px), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+  }
+}
+
+@keyframes zoomInUp {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, var(--animate-distance, 2000px), 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+  }
+}
+
+.animate-zoomInUp {
+  -webkit-animation: 1s both zoomInUp;
+          animation: 1s both zoomInUp;
+}
+
+@-webkit-keyframes backInUp {
+  from {
+    transform: translate3d(0, var(--animate-distance, 1000px), 0) scale3d(0, 0, 1);
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  }
+}
+
+@keyframes backInUp {
+  from {
+    transform: translate3d(0, var(--animate-distance, 1000px), 0) scale3d(0, 0, 1);
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  }
+}
+
+.animate-backInUp {
+  -webkit-animation: 1s both backInUp;
+          animation: 1s both backInUp;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-zoomIn {
+  -webkit-animation: 1s both zoomIn;
+          animation: 1s both zoomIn;
+}
+
+@-webkit-keyframes zoomInLeft {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(calc(-1 * var(--animate-distance, 1000px)), 0, 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes zoomInLeft {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(calc(-1 * var(--animate-distance, 1000px)), 0, 0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+  }
+}
+
+.animate-zoomInLeft {
+  -webkit-animation: 1s both zoomInLeft;
+          animation: 1s both zoomInLeft;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+.animate-fadeIn {
+  -webkit-animation: 1s both fadeIn;
+          animation: 1s both fadeIn;
+}
+
 .resize {
   resize: both;
 }
@@ -1033,6 +1265,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow: hidden;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1056,11 +1292,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
-}
-
-.rounded-t-none {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
 }
 
 .border {
@@ -1105,6 +1336,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(38 38 38 / 0.1) !important;
 }
 
+.bg-neutral-800\/90 {
+  background-color: rgb(38 38 38 / 0.9);
+}
+
 .bg-neutral-700\/10 {
   background-color: rgb(64 64 64 / 0.1);
 }
@@ -1125,9 +1360,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(88 28 135 / 0.05);
 }
 
-.bg-neutral-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+.\!bg-neutral-800\/50 {
+  background-color: rgb(38 38 38 / 0.5) !important;
 }
 
 .bg-gradient-to-r {
@@ -1148,12 +1382,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0));
 }
 
+.\!from-neutral-900\/80 {
+  --tw-gradient-from: rgb(23 23 23 / 0.8) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 23 23 / 0)) !important;
+}
+
 .to-neutral-800 {
   --tw-gradient-to: #262626;
 }
 
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-neutral-900 {
+  --tw-gradient-to: #171717;
 }
 
 .fill-green-500 {
@@ -1370,6 +1613,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 0.2;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .\!shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
@@ -1420,10 +1667,22 @@ Ensure the default browser behavior of the `hidden` attribute.
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
 }
 
+.backdrop-blur-xl {
+  --tw-backdrop-blur: blur(24px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .backdrop-blur {
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.\!backdrop-blur-xl {
+  --tw-backdrop-blur: blur(24px) !important;
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
 }
 
 .transition-all {
@@ -1510,14 +1769,31 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation-delay: 1300ms;
 }
 
-.animate-delay-\[1000ms\] {
-  -webkit-animation-delay: 1000ms;
-          animation-delay: 1000ms;
+.animate-delay-\[700ms\] {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
 }
 
 .animate-delay-\[900ms\] {
   -webkit-animation-delay: 900ms;
           animation-delay: 900ms;
+}
+
+.animate-delay-\[2000ms\] {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+
+.animate-distance-1 {
+  --animate-distance: 0.25rem;
+}
+
+.animate-distance-10\/12 {
+  --animate-distance: 83.333333%;
+}
+
+.animate-distance-full {
+  --animate-distance: 100%;
 }
 
 .scrollbar {
@@ -1595,6 +1871,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-line-clamp: 2;
 }
 
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
@@ -1629,10 +1912,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.group:hover .group-hover\:-mt-\[4\.5rem\] {
+  margin-top: -4.5rem;
+}
+
 .group:hover .group-hover\:scale-110 {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .group:active .group-active\:scale-125 {
@@ -1645,5 +1938,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:rounded-t-none {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .lg\:animate-fadeIn {
+    -webkit-animation: 1s both fadeIn;
+            animation: 1s both fadeIn;
+  }
+
+  .lg\:animate-delay-\[2000ms\] {
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms;
   }
 }
