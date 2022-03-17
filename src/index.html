@@ -310,7 +310,7 @@
                                     <div class="absolute bottom-0 w-full h-full bg-gradient-to-t !from-neutral-900/80 to-transparent"></div>
                                 </div>
 
-                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 !bg-neutral-800/50 !backdrop-blur-xl shadow-xl group-hover:shadow-2xl group-hover:-mt-[4.5rem] transition-all rounded-3xl">
+                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/[0.95] lg:bg-neutral-800/50 lg:backdrop-blur-xl shadow transition-all rounded-3xl info-card">
 
                                     <p class="font-[500] text-lg text-neutral-100" x-text="framework.name"> </p>
 
@@ -423,7 +423,7 @@
 
                             <div class="swiper-slide group">
 
-                                <div class="z-0 relative h-[230px] rounded-2xl overflow-hidden ">
+                                <div class="-z-10 relative h-[230px] rounded-2xl overflow-hidden ">
                                     <img class="object-cover object-center bg-neutral-700/10 w-full h-full z-0"
                                          :src="'assets/img/myProjects/' + project.image"
                                          :alt="project.name"
@@ -432,7 +432,7 @@
                                     <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-neutral-900/80 to-transparent z-10 "></div>
                                 </div>
 
-                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 !bg-neutral-800/50 !backdrop-blur-xl shadow-xl group-hover:shadow-2xl group-hover:-mt-[4.5rem] transition-all rounded-3xl">
+                                <div class="z-10 p-6 mx-4 -mt-16 space-y-3 bg-neutral-800/[0.95] lg:bg-neutral-800/50 lg:backdrop-blur-xl shadow transition-all rounded-3xl info-card">
 
                                     <p class="font-[500] text-lg text-neutral-100" x-text="project.name"></p>
 
@@ -518,6 +518,8 @@
                     spaceBetween: 40,
                 }
             },
+
+            slideActiveClass: 'active',
 
             navigation: {
                 nextEl: '.product-button-next',

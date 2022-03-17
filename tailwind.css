@@ -14,3 +14,11 @@
     }
 
 }
+
+@layer components {
+
+    .active .info-card {
+        @apply shadow-xl -translate-y-1 bg-neutral-800/100 lg:bg-neutral-800/60;
+    }
+
+}
