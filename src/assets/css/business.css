@@ -1,0 +1,38 @@
+/* Business is an editorial portfolio: deliberate typography and quiet geometry. */
+:root[data-profile=professional]{--bg:#eeeae3;--surface:#e4dfd6;--ink:#252825;--muted:#666961;--accent:#454d43;--on-accent:#fff;--line:#cec9bf;--portrait-filter:none;--radius:2px;color-scheme:light}
+.business-note{display:none}
+:root[data-profile=professional] .signature{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:500;font-size:19px;letter-spacing:-.7px}
+:root[data-profile=professional] .signature span{display:inline-block;width:5px;height:5px;background:var(--ink);font-size:0;margin-left:3px}
+:root[data-profile=professional] .icon-button{background:transparent;border:1px solid var(--line);border-radius:0}
+:root[data-profile=professional] .hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(52px,6.2vw,88px);letter-spacing:-3.5px;line-height:1.05}
+:root[data-profile=professional] .hero h1 .heading-line:first-child{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.24em;font-weight:400;letter-spacing:.4px;color:var(--muted);margin-bottom:15px;line-height:1.5}
+:root[data-profile=professional] .hero .eyebrow{font-size:9px;letter-spacing:1.7px;font-weight:400;border-left:1px solid var(--accent);padding-left:11px}
+:root[data-profile=professional] .tiny-dot{display:none}
+:root[data-profile=professional] .hero-description{font-size:18px;letter-spacing:-.2px;line-height:1.55;max-width:390px}
+:root[data-profile=professional] .portrait-backdrop{inset:0;background:linear-gradient(90deg,transparent calc(25% - 1px),var(--line) 25%,transparent calc(25% + 1px)),linear-gradient(90deg,transparent calc(75% - 1px),var(--line) 75%,transparent calc(75% + 1px));opacity:.5;transform:none}
+:root[data-profile=professional] .portrait-backdrop svg{display:none}
+:root[data-profile=professional] .portrait-area:after{content:"";position:absolute;width:75%;height:75%;background:#c7c8be55;inset:10% 12.5% auto;z-index:-1;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);pointer-events:none}
+:root[data-profile=professional] .business-note{display:flex;position:absolute;left:18px;right:18px;top:12px;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:8px;letter-spacing:1px;z-index:2;pointer-events:none}
+.business-note>span:last-of-type{font-family:Georgia,serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:11px}.business-note i{width:5px;height:5px;background:var(--accent)}
+:root[data-profile=professional] .contact-button{border-radius:0;background:var(--ink);font-weight:400;letter-spacing:.1px;min-height:56px}
+:root[data-profile=professional] .contact-button:hover{background:var(--accent);box-shadow:none}
+:root[data-profile=professional] .social-links{justify-content:start;gap:22px;margin-top:6px;font-size:12px}
+:root[data-profile=professional] .social-links>span{color:var(--muted)}
+:root[data-profile=professional] .scroll-cue{font-size:9px;letter-spacing:1px}
+:root[data-profile=professional] .section-kicker{letter-spacing:1.8px;font-size:9px}
+:root[data-profile=professional] h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,4vw,54px);font-weight:400;letter-spacing:-1.8px}
+:root[data-profile=professional] .about-grid{grid-template-columns:1.1fr 1fr;gap:65px}
+:root[data-profile=professional] .about-grid p{font-size:16px;line-height:1.85}
+:root[data-profile=professional] .tech-list{border-top:1px solid var(--line);padding-top:18px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+:root[data-profile=professional] .project-card{padding-bottom:24px;border-bottom:1px solid var(--line)}
+:root[data-profile=professional] .project-image{border-radius:0}
+:root[data-profile=professional] .project-number{font-size:9px;letter-spacing:1.5px}
+:root[data-profile=professional] .project-card h3{font-family:Georgia,serif;font-size:26px;font-weight:400}
+:root[data-profile=professional] .text-link{color:var(--ink);font-size:12px}
+:root[data-profile=professional] .resource-group summary{font-size:14px;font-weight:400}
+:root[data-profile=professional] .resource-link,:root[data-profile=professional] .resource-link img,:root[data-profile=professional] .project-row img{border-radius:1px}
+:root[data-profile=professional] .closing h2{font-size:clamp(42px,5.5vw,72px)}
+:root[data-profile=professional] .intro-mark{font-family:Georgia,serif;font-weight:400}
+:root[data-profile=professional] .intro-orbit{border-radius:0;width:200px;height:200px;opacity:.2;border-color:var(--line)}
+@media(max-width:700px){:root[data-profile=professional] .hero h1{font-size:clamp(40px,11.3vw,54px);letter-spacing:-1.9px}:root[data-profile=professional] .hero h1 .heading-line:first-child{font-size:.3em;margin-bottom:7px}:root[data-profile=professional] .hero .eyebrow{font-size:8px;letter-spacing:1px;margin-bottom:13px}:root[data-profile=professional] .hero-description{font-size:15px;min-height:47px}:root[data-profile=professional] .business-note{left:24px;right:24px;top:15px;font-size:7px;letter-spacing:.6px}.business-note>span:last-of-type{font-size:9px}:root[data-profile=professional] .portrait-area:after{height:78%;top:15%}:root[data-profile=professional] .hero-contact{padding-top:14px}:root[data-profile=professional] .social-links{justify-content:center}:root[data-profile=professional] h2{font-size:33px;letter-spacing:-1.3px}}
+@media(max-width:700px) and (max-height:640px){:root[data-profile=professional] .hero h1{font-size:35px}:root[data-profile=professional] .hero-description{font-size:13px;min-height:38px}:root[data-profile=professional] .hero .eyebrow{font-size:7px;letter-spacing:.6px}:root[data-profile=professional] .business-note{top:4px}.business-note>span:last-of-type{display:none}}

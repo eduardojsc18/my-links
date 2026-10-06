@@ -1,0 +1,29 @@
+/* Native document scrolling: panels can grow when their content needs space. */
+html{scroll-snap-type:y mandatory;scroll-padding-top:0}
+.hero,.content-shell>.section{scroll-snap-align:start;scroll-snap-stop:always}
+.site-footer{scroll-snap-align:end}
+.content-shell>.section{min-height:100svh;padding:clamp(40px,7svh,80px) 0;display:flex;flex-direction:column;justify-content:center;position:relative}
+.scene-content{width:100%;position:relative;z-index:1;transform-origin:center;transform:translateY(var(--scene-shift,0px)) scale(var(--scene-scale,1));opacity:var(--scene-opacity,1)}
+/* Animate the inner composition, keeping snap boundaries and focus stable. */
+.js .content-shell>.section.reveal{transform:none;opacity:1;transition:border-color .7s}
+.section.is-tall{justify-content:flex-start;scroll-snap-stop:normal}
+.section.is-tall .scene-content{transform:none;opacity:1}
+.section-kicker i{transform-origin:left;scale:var(--scene-line,1) 1}
+.scene-content>.eyebrow{justify-content:center}
+:root[data-profile=gamer] .scene-content{transform-origin:50% 40%}
+@media(max-width:700px){.content-shell>.section{padding:40px 0}.closing .scene-content>.eyebrow{font-size:8px}}
+.content-shell>.section.is-tall{padding-bottom:clamp(112px,20svh,200px)}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none;scroll-behavior:auto}.scene-content{transform:none!important;opacity:1!important}.section-kicker i{scale:1}}
+/* Profile-specific handoffs are decorative and never cover interactive content. */
+.scene-transition{position:absolute;inset:var(--transition-top,0px) 0 auto;height:min(38svh,300px);overflow:clip;pointer-events:none;color:var(--accent);opacity:var(--handoff,0);z-index:0}
+.scene-transition i{position:absolute;display:block}
+.transition-shape{width:86%;height:210px;border-radius:50% 30% 60% 35%;background:var(--accent);opacity:.07;top:20px;left:7%;transform:translateY(var(--handoff-y,0px)) rotate(var(--handoff-turn,0deg))}
+.transition-line{width:78%;height:190px;border:1px solid currentColor;border-radius:50%;top:35px;left:11%;opacity:.25;transform:translateY(var(--handoff-y,0px)) rotate(calc(var(--handoff-turn,0deg)*-1))}
+.transition-detail{width:7px;height:7px;border-radius:50%;background:currentColor;left:18%;top:80px;transform:translateY(var(--handoff-y,0px));opacity:.5}
+:root[data-profile=gamer] .transition-shape{border-radius:0;inset:0;width:100%;height:100%;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0 23px,currentColor 24px 25px),repeating-linear-gradient(90deg,transparent 0 23px,currentColor 24px 25px);clip-path:polygon(0 0,100% 0,100% 60%,70% 100%,0 100%);transform:translateY(var(--handoff-y,0px))}
+:root[data-profile=gamer] .transition-line{width:2px;height:100%;left:var(--handoff-x,0%);top:0;border:0;border-radius:0;background:currentColor;opacity:.7;box-shadow:0 0 18px currentColor;transform:none}
+:root[data-profile=gamer] .transition-detail{border-radius:0;left:auto;right:12px;top:24px;width:24px;height:24px;background:none;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:translateY(var(--handoff-y,0px))}
+:root[data-profile=professional] .transition-shape{border-radius:0;left:10%;top:0;width:22%;height:100%;opacity:.05;transform:translateY(var(--handoff-y,0px))}
+:root[data-profile=professional] .transition-line{border-radius:0;border:0;border-left:1px solid currentColor;border-right:1px solid currentColor;width:70%;height:100%;left:15%;top:0;opacity:.2;transform:translateY(var(--handoff-y,0px))}
+:root[data-profile=professional] .transition-detail{width:45%;height:1px;left:40%;top:54px;border-radius:0;opacity:.4;transform-origin:left;scale:var(--handoff,0) 1;transform:none}
+@media(prefers-reduced-motion:reduce){.scene-transition{display:none}}
