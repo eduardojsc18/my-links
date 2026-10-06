@@ -1,13 +1,16 @@
 import { collections } from './links.js';
 import {capturePortrait,animatePortraitTransition,stopPortraitTransition} from './portrait-motion.js';
 import {initSceneMotion} from './scene-motion.js';
+import {initProfilePages} from './profile-pages.js';
+import {profileFromUrl,profileUrl,shareProfileUrl} from './profile-url.js';
+import {initSectionNavigation} from './section-navigation.js';
 
 // Approved transparent portraits, one for each profile.
 
 export const profiles = {
   casual: { name: 'Casual', photo: 'assets/img/eduardo-casual-v1.png', alt: 'Eduardo José com camiseta verde-escura, em um retrato descontraído sem fundo', description: 'Crio para a web. Compartilho ideias e projetos por aqui.', about: 'Gosto de transformar ideias em experiências digitais simples e úteis. Este é meu espaço para compartilhar o que crio, o que uso e o que faz parte do meu dia a dia.', color: '#f7f6f2', link: 'https://www.facebook.com/eduard0jsc', label: 'Vamos nos conectar' },
-  gamer: { name: 'Gamer', photo: 'assets/img/eduardo-gamer-v1.png', alt: 'Eduardo José com headset preto e camiseta grafite, em um retrato sem fundo', description: 'CS:GO é meu mapa favorito. Entre um round e outro, também escrevo código.', about: 'Se for para jogar, é quase sempre CS. Curto a call bem passada, o trabalho em equipe e aquele clutch que salva o round. Fora do servidor, meu outro jogo é transformar ideias em projetos para a web. Bora de duo? Me chama na Steam.', color: '#171b1e', link: 'https://steamcommunity.com/id/v3rme1o', label: 'Bora de lobby? Me adiciona na Steam' },
-  professional: { name: 'Business', photo: 'assets/img/eduardo-business-v1.png', alt: 'Eduardo José com camiseta preta lisa, em um retrato profissional sem fundo', description: 'Da ideia à interface. Desenvolvimento web com atenção a cada detalhe.', about: 'Gosto de entender o problema antes de escrever o código. Meu trabalho com desenvolvimento web reúne organização, atenção à interface e cuidado com a experiência de quem usa. Aqui você pode conhecer alguns dos meus projetos e conversar comigo sobre sua ideia.', color: '#eeeae3', link: 'https://www.linkedin.com/in/eduardojsc/', label: 'Conheça meu perfil no LinkedIn' },
+  gamer: { name: 'Gamer', photo: 'assets/img/eduardo-gamer-v1.png', alt: 'Eduardo José com headset preto e camiseta grafite, em um retrato sem fundo', description: 'Do CS 1.6 ao CS2. Um round de cada vez.', about: 'O Counter-Strike me acompanha desde o 1.6. Cheguei à Global no CS:GO e hoje meu casual é o CS2. Sem mapa ou posição favorita: vou onde o round precisar. Aqui você conhece minha história nos jogos, meu inventário e o PC que me acompanha.', color: '#191619', link: 'https://steamcommunity.com/id/rvermeio/', label: 'Bora de lobby? Me adiciona na Steam' },
+  professional: { name: 'Business', photo: 'assets/img/eduardo-business-v1.png', alt: 'Eduardo José com camiseta preta lisa, em um retrato profissional sem fundo', description: 'Empreendedor, desenvolvedor e criador de sistemas para operações reais.', about: 'Minha trajetória em tecnologia começou em 2011. Hoje sou empresário, desenvolvo sistemas e vendo produtos de múltiplos nichos no e-commerce. Trabalho dos dois lados: construindo as ferramentas e vivendo a operação que elas precisam resolver.', color: '#eeeae3', link: 'https://www.linkedin.com/in/eduardojsc/', label: 'Conheça meu perfil no LinkedIn' },
 };
 const root = document.documentElement;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -49,6 +52,7 @@ for (const [index, group] of collections.filter(c => c.name !== 'Projetos').entr
   details.append(summary,list); $('#resource-groups').append(details);
 }
 
+const updateProfilePages = initProfilePages(profiles, name => setProfile(name));
 const profileNames = Object.keys(profiles);
 // Capture the authored copy so leaving Gamer restores both other modes exactly.
 const gamerCopy = {
@@ -68,11 +72,11 @@ const gamerCopy = {
 };
 const regularCopy = Object.fromEntries(Object.keys(gamerCopy).map(selector=>[selector,$(selector).textContent]));
 const businessCopy = {
-  '#hero-role': 'Desenvolvimento web', '#hero-location': 'São Paulo, Brasil',
+  '#hero-role': 'Empresário & full stack', '#hero-location': 'São Paulo, Brasil',
   '.hero h1 .heading-line:first-child > span': 'Prazer,',
   '.hero-contact .contact-button > span': 'Vamos falar do seu projeto',
   '.scroll-cue > span': 'Conheça meu trabalho',
-  '#sobre .section-kicker > span': '01 / Minha abordagem',
+  '#sobre .section-kicker > span': '01 / Minha trajetória',
   '#projetos .section-kicker > span': '02 / Projetos selecionados',
   '#projetos .section-heading p': 'Uma seleção do que desenvolvo para a web.',
   '#links .section-kicker > span': '03 / Ferramentas de trabalho',
@@ -87,6 +91,7 @@ const gamerResourceLabels = ['Stack de desenvolvimento','Utilitários do round',
 const businessResourceLabels = ['Tecnologias','Recursos de criação','Bibliotecas de ícones','Ferramentas de produtividade','Estação de trabalho'];
 const headingCopy = new Map();
 function applyProfileCopy(name) {
+  updateProfilePages(name);
   const variant = name==='gamer'?'gamer':name==='professional'?'business':'regular';
   for(const [selector,text] of Object.entries(variant==='gamer'?gamerCopy:variant==='business'?businessCopy:regularCopy)) $(selector).textContent=text;
   for(const [selector,copy] of headingCopy) {
@@ -126,6 +131,8 @@ async function setProfile(name, announce = true, direction = 1) {
   if(!photo.src.endsWith(p.photo)) photo.src = p.photo; photo.alt = p.alt;
   $('#personal-link').href = p.link; $('#personal-link').replaceChildren(document.createTextNode(p.label + ' '),icon('arrow'));
   $('meta[name="theme-color"]').content = p.color;
+  $('#site-icon').href = `assets/brand/favicon-${name === 'professional' ? 'business' : name}.svg`;
+  if(announce) history.replaceState(null,'',profileUrl(location.href,name));
   try { localStorage.setItem('eduardo-profile',name); } catch {}
   if(announce) $('#profile-status').textContent = `Perfil ${p.name} selecionado.`;
   if(old && announce) animatePortraitTransition(photo,old,direction,reducedMotion);
@@ -157,12 +164,16 @@ for(const [selector,gamer] of Object.entries({
   '.closing h2': ['Bora fechar','esse lobby<span>?</span>'],
 })) headingCopy.set(selector,{gamer,regular:[...$(selector).querySelectorAll(':scope > .heading-line > span')].map(el=>el.innerHTML)});
 for(const [selector,business] of Object.entries({
-  '#sobre h2': ['Clareza na ideia<span>.</span>','Cuidado na execução<span>.</span>'],
+  '#sobre h2': ['Empreender<span>.</span>','E construir soluções<span>.</span>'],
   '#projetos h2': ['Do conceito','à experiência<span>.</span>'],
   '#links h2': ['Um processo<span>.</span>','Boas ferramentas<span>.</span>'],
   '.closing h2': ['Sua próxima ideia','começa aqui<span>.</span>'],
 })) headingCopy.get(selector).business=business;
-try { const saved = localStorage.getItem('eduardo-profile'); if(profiles[saved]) setProfile(saved,false); } catch {}
+updateProfilePages('casual');
+let initialProfile = profileFromUrl(location.href);
+if(!initialProfile) { try { const saved=localStorage.getItem('eduardo-profile'); if(profiles[saved]) initialProfile=saved; } catch {} }
+setProfile(initialProfile || 'casual',false);
+addEventListener('popstate',()=> { const mode=profileFromUrl(location.href); if(mode) setProfile(mode,false); });
 if('IntersectionObserver' in window && !reducedMotion.matches) {
   root.classList.add('js');
   document.querySelectorAll('.project-card,.resource-group,.project-row').forEach((el,index)=>el.style.setProperty('--stagger',`${(index%3)*90}ms`));
@@ -173,7 +184,7 @@ if(!reducedMotion.matches) {
   root.classList.add('intro-active');
   const photo = $('#profile-photo');
   const ready = photo.decode ? photo.decode().catch(()=>{}) : Promise.resolve();
-  const entrance = new Promise(resolve=>setTimeout(resolve,1150));
+  const entrance = new Promise(resolve=>setTimeout(resolve,{casual:1150,gamer:1350,professional:1050}[currentProfile]));
   Promise.all([entrance,Promise.race([ready,new Promise(resolve=>setTimeout(resolve,1700))])]).then(()=> {
     clearTimeout(window.introSafety); root.classList.add('intro-finished');
   });
@@ -205,6 +216,7 @@ if('IntersectionObserver' in window) new IntersectionObserver(entries=>{heroVisi
 document.addEventListener('visibilitychange',syncAmbientPlayback);
 reducedMotion.addEventListener('change',syncAmbientPlayback);
 syncAmbientPlayback();
+initSectionNavigation();
 initSceneMotion(reducedMotion);
 let toastTimer; function toast(message) { $('#toast').textContent=message; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3500); }
-$('#share-button').addEventListener('click',async()=> { const data={title:'Eduardo José',text:'Ideias, projetos e um pouco de mim.',url:location.href.split('#')[0]}; try { if(navigator.share){await navigator.share(data);}else if(navigator.clipboard){await navigator.clipboard.writeText(data.url);toast('Link copiado. Obrigado por compartilhar!');}else{toast('Copie o endereço do navegador para compartilhar.');} }catch(error){if(error.name!=='AbortError') toast('Copie o endereço do navegador para compartilhar.');} });
+$('#share-button').addEventListener('click',async()=> { const data={title:'Eduardo José',text:'Três lados. A mesma pessoa.',url:shareProfileUrl(location.href,currentProfile)}; try { if(navigator.share){await navigator.share(data);}else if(navigator.clipboard){await navigator.clipboard.writeText(data.url);toast('Link deste perfil copiado. Obrigado por compartilhar!');}else{toast('Copie o endereço do navegador para compartilhar.');} }catch(error){if(error.name!=='AbortError') toast('Copie o endereço do navegador para compartilhar.');} });

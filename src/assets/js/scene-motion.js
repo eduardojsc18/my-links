@@ -9,7 +9,7 @@ export function initSceneMotion(reducedMotion) {
     section.prepend(transition);
   }
   const entries = new Map();
-  const targets = sections.flatMap(section => [...section.querySelectorAll('.section-kicker,.section-heading,.about-grid h2,.about-grid > div,.project-card,.resource-group,.closing .eyebrow,.closing h2,.closing .contact-button')]);
+  const targets = sections.flatMap(section => [...section.querySelectorAll('.section-kicker,.section-heading,.about-grid h2,.about-grid > div,.project-card,.resource-group,.closing .eyebrow,.closing h2,.closing .contact-button,.profile-list article,.product-stories article,.career-list li,.hardware-grid > div,.mode-options button')]);
   function enter(el) {
     entries.get(el)?.cancel();
     if (reducedMotion.matches || typeof el.animate !== 'function') return;
@@ -26,7 +26,9 @@ export function initSceneMotion(reducedMotion) {
       {opacity:1,transform:'translateY(0) rotate(0) scale(1)'},
     ];
     const index = targets.indexOf(el);
-    const effect = el.animate(frames,{duration:mode==='gamer'?650:mode==='professional'?1000:950,delay:(index%3)*65,easing:mode==='gamer'?'cubic-bezier(.16,1,.3,1)':'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+    // Keep mode selectors stationary so entrance motion never shifts a tap target.
+    const entryFrames = el.matches('.mode-options button') ? [{opacity:0},{opacity:1}] : frames;
+    const effect = el.animate(entryFrames,{duration:mode==='gamer'?650:mode==='professional'?1000:950,delay:(index%3)*65,easing:mode==='gamer'?'cubic-bezier(.16,1,.3,1)':'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
     entries.set(el,effect);
     effect.finished.then(()=>{if(entries.get(el)===effect) entries.delete(el);}).catch(()=>{});
   }
@@ -44,6 +46,7 @@ export function initSceneMotion(reducedMotion) {
     frame = 0;
     const height = innerHeight;
     for (const section of sections) {
+      if (section.hidden) continue;
       // Measure content with the normal symmetrical padding. Including the
       // extra exit buffer here would keep collapsed accordions permanently tall.
       const padding = parseFloat(getComputedStyle(section).paddingTop);

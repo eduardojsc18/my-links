@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node scripts/serve.cjs",
     "start": "node scripts/serve.cjs",
-    "check": "node --check src/assets/js/site.js && node --check src/assets/js/links.js && node --check src/assets/js/portrait-motion.js && node --check src/assets/js/scene-motion.js && node --check scripts/serve.cjs"
+    "check": "node --check src/assets/js/site.js && node --check src/assets/js/links.js && node --check src/assets/js/portrait-motion.js && node --check src/assets/js/scene-motion.js && node --check src/assets/js/profile-pages.js && node --check scripts/serve.cjs && node --check src/assets/js/ui-icons.js && node --check src/assets/js/steam-profile.js && node --check server/steam-profile.cjs && node --check netlify/functions/steam-profile.cjs && node --check src/assets/js/profile-url.js && node --check src/assets/js/section-navigation.js",
+    "test": "node --test tests/*.test.cjs"
   }
 }

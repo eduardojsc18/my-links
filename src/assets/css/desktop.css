@@ -1,0 +1,114 @@
+.desktop-visual,.desktop-story{display:none}
+.hero-intro{display:contents}
+@property --contact-base{syntax:'<color>';inherits:true;initial-value:#f7f6f2}
+@media(max-width:700px){
+ :root[data-profile] .hero{height:100svh;min-height:0;grid-template-rows:auto minmax(0,1fr) auto 26px;row-gap:6px;padding-top:clamp(68px,10svh,86px);padding-bottom:max(8px,env(safe-area-inset-bottom))}
+ .hero-copy{grid-row:1;grid-column:1}
+ /* A long, eased dissolve replaces the narrow band at the cutout's base. */
+ :root[data-profile] .portrait{overflow:hidden;min-height:0;height:100%;container-type:size}
+ /* Mask the actual square image, not the empty letterboxing around it. */
+ :root[data-profile] .portrait img{position:absolute;top:0;left:calc((100% - min(124cqw,106cqh)) / 2);width:min(124cqw,106cqh);max-width:none;height:auto;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent);object-fit:contain;object-position:center top;scale:1;transform-origin:center top;display:block}
+ :root[data-profile] .portrait-area{padding:0;aspect-ratio:auto;min-height:0;align-self:stretch;mask-image:linear-gradient(to bottom,#000 0%,#000 86%,rgba(0,0,0,.96) 89%,rgba(0,0,0,.78) 92%,rgba(0,0,0,.42) 96%,transparent 100%)}
+ :root[data-profile=professional] .business-note{display:none}
+ :root[data-profile] .hero-contact{--contact-base:var(--bg);grid-row:3;grid-column:1;position:relative;z-index:3;margin-top:-38px;padding-top:10px;isolation:isolate}
+ .hero-contact:before{content:"";position:absolute;left:-24px;right:-24px;top:-24px;height:calc(100% + 24px);z-index:-1;pointer-events:none;background:linear-gradient(to bottom,transparent 0px,color-mix(in srgb,var(--contact-base) 12%,transparent) 12px,color-mix(in srgb,var(--contact-base) 42%,transparent) 26px,color-mix(in srgb,var(--contact-base) 82%,transparent) 40px,var(--contact-base) 54px)}
+ :root[data-profile] .hero-contact .contact-button{min-height:54px;box-shadow:inset 0 1px 0 #ffffff16,0 2px 5px #00000008;font-weight:500;letter-spacing:-.2px}
+ :root[data-profile=casual] .hero-contact .contact-button{border-radius:18px}
+ .hero-contact .social-links{margin-top:7px;gap:26px;color:var(--muted);font-size:12px}
+ .hero-contact .social-links svg{width:16px;height:16px;opacity:.8}
+}
+@media(max-width:700px) and (max-height:700px){
+ :root[data-profile] .hero h1{font-size:clamp(29px,5.3svh,37px);margin-bottom:8px;letter-spacing:-1.4px}
+ :root[data-profile] .hero-description{font-size:13px;line-height:1.45;min-height:0}
+ :root[data-profile] .hero .eyebrow{font-size:7px;letter-spacing:.8px;margin-bottom:8px}
+ :root[data-profile] .hero-contact .contact-button{min-height:48px;padding:12px 16px;font-size:13px}
+ .hero-contact .social-links{margin-top:3px}.hero-contact .social-links a{min-height:44px}
+ :root[data-profile] .scroll-cue{min-height:24px;font-size:7px}
+}
+@media(min-width:701px){
+ /* Separate reading, contact and exploration; the portrait spans the first two. */
+ :root[data-profile] .hero{width:calc(100% - 80px);max-width:1264px;height:100svh;min-height:760px;padding:122px 0 30px;grid-template-columns:1fr 1fr;grid-template-rows:minmax(280px,1fr) 112px 90px 32px;column-gap:56px;row-gap:18px;align-content:stretch;overflow:clip;isolation:isolate}
+ .hero-intro{display:flex;grid-column:1;grid-row:1/3;flex-direction:column;justify-content:center;gap:24px;min-width:0;padding-bottom:16px}
+ :root[data-profile] .hero-copy{align-self:stretch;min-width:0;min-height:300px;padding-bottom:0;display:flex;flex-direction:column;justify-content:flex-end}
+ :root[data-profile] .hero h1{font-size:clamp(48px,5.25vw,78px);letter-spacing:-3.3px;line-height:1.04;margin-bottom:24px}
+ :root[data-profile] .hero-description{font-size:18px;line-height:1.65;max-width:440px;min-height:60px}
+ :root[data-profile] .hero .eyebrow{margin-bottom:24px;letter-spacing:1.8px}
+ :root[data-profile] .hero-contact{align-self:start;padding-top:0;max-width:360px;width:100%;flex-shrink:0}
+ :root[data-profile] .hero-contact .social-links{justify-content:start;gap:22px}
+ :root[data-profile] .portrait-area{grid-column:2;grid-row:1/3;align-self:stretch;display:flex;flex-direction:column;justify-content:end;min-height:0;padding:36px 0 0}
+ :root[data-profile] .portrait{height:100%;min-height:0;flex:1;width:100%}
+ :root[data-profile] .portrait img{scale:1;object-position:center bottom;mask-image:linear-gradient(to bottom,#000 0%,#000 92%,transparent 100%)}
+ :root[data-profile] .portrait-arrow{top:64%}
+ :root[data-profile] .portrait .previous{left:8px}:root[data-profile] .portrait .next{right:8px}
+ .desktop-visual{display:block;position:absolute;inset:0 -20px 0;pointer-events:none;z-index:-1;color:var(--accent)}
+ .desktop-art{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1;display:none;overflow:visible}
+ :root[data-profile=casual] .desktop-art--casual{display:block;opacity:.3}
+ .desktop-art--casual ellipse{stroke-dasharray:680 32 12 30}
+ .desktop-art--casual circle{fill:currentColor;stroke:none}
+ .desktop-sketch{stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ :root[data-profile=casual] .portrait-backdrop{inset:35px 5px 15px;opacity:.65}
+ :root[data-profile=casual] .ambient-orbit{opacity:.06}
+ :root[data-profile=gamer] .hero h1{font-size:clamp(45px,5vw,72px);letter-spacing:-2px}
+ :root[data-profile=gamer] .hero h1 .heading-line:first-child{font-size:.44em;letter-spacing:3px;margin-bottom:10px}
+ :root[data-profile=gamer] .desktop-art--gamer{display:block;opacity:.3}
+ .desktop-radar-sector{fill:currentColor;fill-opacity:.1;stroke:none}
+ .desktop-art--gamer text{font:800 86px Arial,sans-serif;letter-spacing:5px;stroke-width:.8;opacity:.5}
+ :root[data-profile=gamer] .cs-hud{inset:0 0 20px}
+ :root[data-profile=gamer] .cs-hud-top{top:4px;left:0;right:0}
+ :root[data-profile=gamer] .cs-hud-bottom{left:8px;right:8px}
+ :root[data-profile=gamer] .cs-radar{top:46px;left:0;width:95px;height:95px}
+ :root[data-profile=gamer] .portrait-backdrop{opacity:.2;inset:65px 0 0}
+ :root[data-profile=professional] .hero h1{font-size:clamp(51px,6vw,86px);letter-spacing:-3px}
+ :root[data-profile=professional] .hero h1 .heading-line:first-child{margin-bottom:16px}
+ :root[data-profile=professional] .desktop-art--business{display:block;opacity:.3}
+ .desktop-art--business text{font:700 125px Georgia,serif;fill:currentColor;fill-opacity:.15;stroke:none}
+ :root[data-profile=professional] .business-note{left:0;right:0;top:0;height:24px;font-size:8px}
+ :root[data-profile=professional] .portrait-area:after{width:70%;height:75%;left:15%;top:16%;background:#c7c8be35}
+ :root[data-profile=professional] .portrait-backdrop{opacity:.2}
+ .desktop-story{display:block;grid-column:1/-1;grid-row:3;position:relative;z-index:2;align-self:stretch}
+ .desktop-story-mode{height:100%;display:none;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+ :root[data-profile=casual] .desktop-story--casual,:root[data-profile=gamer] .desktop-story--gamer,:root[data-profile=professional] .desktop-story--business{display:grid}
+ .desktop-story a{min-width:0;display:flex;align-items:center;gap:18px;padding:14px 24px;transition:background .25s}
+ .desktop-story a:first-child{padding-left:0}.desktop-story a:last-child{padding-right:0}
+ .desktop-story a+a{border-left:1px solid var(--line)}
+ .desktop-story small{display:block;font-size:8px;font-weight:500;letter-spacing:1.6px;color:var(--muted);margin-bottom:7px;line-height:1.4}
+ .desktop-story b{display:block;font-size:17px;font-weight:500;letter-spacing:-.3px}
+ .desktop-story a>svg:last-child{margin-left:auto;width:16px;height:16px;color:var(--muted);transition:translate .25s}
+ .desktop-story a:hover>svg:last-child{translate:2px -2px;color:var(--accent)}
+ .story-number{font-family:Georgia,serif;font-size:32px;letter-spacing:-2px;color:var(--accent);min-width:36px}
+ .desktop-story .story-emblem{width:36px;height:36px;color:var(--accent);stroke-width:1}
+ .desktop-story img{object-fit:contain;filter:grayscale(1);opacity:.65;flex-shrink:0}
+ :root[data-profile=gamer] .desktop-story{font-family:Consolas,monospace}
+ :root[data-profile=gamer] .desktop-story b{font-size:16px;text-transform:uppercase;letter-spacing:.3px}
+ :root[data-profile=gamer] .story-number{font-family:Consolas,monospace;font-size:27px;letter-spacing:-1px}
+ :root[data-profile=professional] .desktop-story b{font-family:Georgia,serif;font-size:20px}
+ :root[data-profile] .scroll-cue{grid-row:4;grid-column:1/-1;align-self:center;min-height:32px;flex-direction:row;gap:12px;letter-spacing:1px;font-size:9px}
+ .site-header{padding-left:max(40px,calc((100vw - 1264px)/2));padding-right:max(40px,calc((100vw - 1264px)/2))}
+ /* Carry the larger editorial grid through the story, without stretching prose. */
+ .content-shell{width:calc(100% - 80px);max-width:1264px}
+ .content-shell>.section{padding-left:32px;padding-right:32px}
+ .section-kicker{margin-bottom:34px}
+ .profile-body{max-width:790px}
+ .section-navigation{margin-top:44px}
+ .product-stories{gap:56px}
+ .product-stories article{padding:30px;background:var(--surface);border:1px solid var(--line)}
+ .product-stories h3{margin-top:18px}
+ .career-list{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;border-left:0}
+ .career-list li{border-top:1px solid var(--line);padding:24px 0 30px}
+ .career-list li:before{display:none}
+ .hardware-grid{grid-template-columns:repeat(3,1fr)}
+ .game-library{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:701px) and (max-width:1099px){
+ :root[data-profile] .hero{width:calc(100% - 48px);column-gap:28px;min-height:740px;padding-top:112px}
+ :root[data-profile] .hero h1{font-size:clamp(38px,5.3vw,56px);letter-spacing:-2px}
+ :root[data-profile=professional] .hero h1{font-size:clamp(40px,5.6vw,60px)}
+ :root[data-profile] .hero-description{font-size:16px;line-height:1.6;min-height:78px}
+ .desktop-story a{gap:10px;padding:12px 16px}.desktop-story b{font-size:14px}.desktop-story small{font-size:7px;letter-spacing:1px}
+ :root[data-profile=gamer] .desktop-story b{font-size:12px}:root[data-profile=professional] .desktop-story b{font-size:17px}
+ .story-number{font-size:25px;min-width:28px}.desktop-story img{width:32px;height:32px}
+ .content-shell{width:calc(100% - 48px)}.content-shell>.section{padding-left:8px;padding-right:8px}
+ .site-header{padding-left:24px;padding-right:24px}
+ .career-list{column-gap:28px}.product-stories{gap:20px}.product-stories article{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){.desktop-story a>svg:last-child{transition:none}}

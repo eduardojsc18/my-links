@@ -1,0 +1,21 @@
+.section-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted)}
+.section-navigation a{display:flex;align-items:center;gap:9px;min-height:44px;padding:4px 0;font-size:11px;letter-spacing:.6px;transition:color .2s}
+.section-navigation a:hover{color:var(--accent)}
+.section-navigation svg{width:16px;height:16px;transition:translate .3s var(--ease)}
+.section-previous svg,.returns-to-start svg{rotate:180deg}
+.section-previous:hover svg{translate:0 -3px}.section-next:hover svg{translate:0 3px}.returns-to-start:hover svg{translate:0 -3px}
+.section-progress{font-size:9px;font-variant-numeric:tabular-nums;letter-spacing:2px;opacity:.6}
+:root[data-profile=gamer] .section-navigation{border-top-style:dashed;font-family:Consolas,monospace;text-transform:uppercase}
+:root[data-profile=professional] .section-navigation a{letter-spacing:1px}
+/* Keep tap targets still; only their chevrons suggest the swipe direction. */
+.portrait .portrait-arrow,.portrait:hover .portrait-arrow,.portrait.is-switching .portrait-arrow{opacity:1;z-index:4;width:44px;height:44px;padding:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:50%;box-shadow:0 3px 14px #0000000c;transform:none;transition:background .4s,border-color .4s,box-shadow .2s}
+.portrait .portrait-arrow:hover{transform:none;border-color:var(--accent);box-shadow:0 3px 18px #00000015}
+.portrait-arrow svg{width:19px;height:19px;animation:portrait-arrow-hint 4s ease-in-out infinite}
+.portrait-arrow.previous{--arrow-direction:-3px}.portrait-arrow.next{--arrow-direction:3px}
+.portrait .portrait-arrow:active svg{scale:.84}
+.portrait.is-switching .portrait-arrow svg{animation:none}
+.ambient-paused .portrait-arrow svg{animation-play-state:paused}
+:root[data-profile=gamer] .portrait .portrait-arrow,:root[data-profile=professional] .portrait .portrait-arrow{border-radius:var(--radius)}
+@keyframes portrait-arrow-hint{0%,65%,100%{translate:0}75%{translate:var(--arrow-direction) 0}85%{translate:0}92%{translate:var(--arrow-direction) 0}}
+@media(max-width:700px){.section-navigation{margin-top:32px;gap:8px}.section-navigation a{font-size:10px}.portrait .previous{left:14px}.portrait .next{right:14px}}
+@media(prefers-reduced-motion:reduce){.portrait-arrow svg{animation:none!important}.section-navigation svg{transition:none}}

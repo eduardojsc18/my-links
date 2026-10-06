@@ -5,7 +5,6 @@
 @media(max-width:700px) and (min-height:740px){.portrait img{scale:1.12;transform-origin:center bottom}}
 .portrait .portrait-outgoing{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .portrait.is-switching #profile-photo{transition:none;will-change:transform,opacity}
-.portrait.is-switching .portrait-arrow{opacity:0}
 .portrait-ambient{position:absolute;inset:0;z-index:0;pointer-events:none;color:var(--accent);overflow:clip}
 .ambient-orbit{position:absolute;width:78%;aspect-ratio:1;left:11%;top:12%;border:1px solid currentColor;border-radius:50%;opacity:.16;animation:orbit-drift 13s ease-in-out infinite alternate}
 .orbit-secondary{width:90%;left:5%;top:8%;border-style:dashed;opacity:.1;animation:orbit-turn 55s linear infinite}
@@ -16,7 +15,7 @@
 :root[data-profile=gamer] .ambient-orbit{border-radius:0;width:74%;left:13%;opacity:.08;animation:tactical-drift 15s ease-in-out infinite alternate}
 :root[data-profile=gamer] .orbit-secondary{width:90%;left:5%;border-style:solid;animation:tactical-drift 18s ease-in-out -8s infinite alternate}
 :root[data-profile=gamer] .ambient-particle{border-radius:0;width:3px;height:3px;opacity:.6;animation:particle-drift 12s ease-in-out infinite alternate}
-:root[data-profile=gamer] .ambient-sweep{display:block;position:absolute;inset:5% 10%;background:linear-gradient(transparent 48%,#efb54720 49%,#efb54755 50%,transparent 51%);animation:hud-sweep 7s ease-in-out infinite;opacity:.5}
+:root[data-profile=gamer] .ambient-sweep{display:block;position:absolute;inset:5% 10%;background:linear-gradient(transparent 48%,#ed737a20 49%,#ed737a55 50%,transparent 51%);animation:hud-sweep 7s ease-in-out infinite;opacity:.5}
 :root[data-profile=gamer] .cs-radar:before{content:none}
 :root[data-profile=gamer] .cs-radar .radar-position{animation:radar-beacon 3s ease-in-out infinite;transform-origin:43px 43px}
 :root[data-profile=gamer] .portrait-backdrop{animation:tactical-texture 18s linear infinite}

@@ -6,13 +6,26 @@
   <title>Eduardo José — ideias, projetos e conexões</title>
   <meta name="description" content="Um pouco sobre Eduardo José, seus projetos para a web e os links que usa no dia a dia. Conheça, explore e entre em contato.">
   <meta name="theme-color" content="#f7f6f2">
-  <meta property="og:title" content="Eduardo José — ideias, projetos e conexões">
-  <meta property="og:description" content="Um pouco sobre mim. Um lugar para nos conectar.">
+  <meta property="og:title" content="Eduardo José — três lados, a mesma pessoa">
+  <meta property="og:description" content="Conheça meu lado Casual, Gamer e Business. Histórias, jogos, sistemas e um lugar para nos conectar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eduardojsc18.github.io/my-links/src/">
-  <meta property="og:image" content="https://eduardojsc18.github.io/my-links/src/assets/img/164914000_501713584593972_9106144060294608334_n.jpg">
+  <meta property="og:image" content="https://eduardojsc18.github.io/my-links/src/assets/brand/eduardo-social-v1.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1730">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Eduardo José em seus três perfis: Casual com camiseta verde, Gamer com headset e Business com camiseta preta. Três lados. A mesma pessoa.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Eduardo José">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.ico">
+  <meta name="twitter:title" content="Eduardo José — três lados, a mesma pessoa">
+  <meta name="twitter:description" content="Conheça meu lado Casual, Gamer e Business. Histórias, jogos, sistemas e um lugar para nos conectar.">
+  <meta name="twitter:image" content="https://eduardojsc18.github.io/my-links/src/assets/brand/eduardo-social-v1.png">
+  <meta name="twitter:image:alt" content="Retratos de Eduardo José nos modos Casual, Gamer e Business.">
+  <link rel="canonical" href="https://eduardojsc18.github.io/my-links/src/">
+  <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+  <link id="site-icon" rel="icon" type="image/svg+xml" href="assets/brand/favicon-casual.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
   <link rel="preload" as="image" href="assets/img/eduardo-casual-v1.png">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/experience.css">
@@ -20,10 +33,22 @@
   <link rel="stylesheet" href="assets/css/business.css">
   <link rel="stylesheet" href="assets/css/motion.css">
   <link rel="stylesheet" href="assets/css/scenes.css">
+  <link rel="stylesheet" href="assets/css/profile-pages.css">
+  <link rel="stylesheet" href="assets/css/intro.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/desktop.css">
+  <link rel="stylesheet" href="assets/css/discovery.css">
   <script>
-    // Establish the entry state before the first paint; always release it even
-    // if the module fails to load. No fixed minimum loading delay.
+    // Resolve the mode before painting the loader, including when storage is blocked.
     try {
+      const aliases = {casual:'casual',gamer:'gamer',business:'professional',professional:'professional'};
+      const requested = new URL(location.href).searchParams.get('perfil')?.trim().toLowerCase();
+      let selected = Object.hasOwn(aliases,requested) ? aliases[requested] : null;
+      if(!selected) { try { const saved=localStorage.getItem('eduardo-profile'); if(['casual','gamer','professional'].includes(saved)) selected=saved; } catch {} }
+      document.documentElement.dataset.profile = selected || 'casual';
+      document.querySelector('meta[name="theme-color"]').content = {casual:'#f7f6f2',gamer:'#191619',professional:'#eeeae3'}[selected || 'casual'];
+      document.getElementById('site-icon').href = 'assets/brand/favicon-' + (selected === 'professional' ? 'business' : selected || 'casual') + '.svg';
+      document.querySelector('link[rel="preload"][as="image"]').href = 'assets/img/eduardo-' + (selected === 'professional' ? 'business' : selected || 'casual') + '-v1.png';
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('intro-active');
         window.introSafety = setTimeout(() => document.documentElement.classList.add('intro-finished'), 2600);
@@ -44,22 +69,39 @@
     <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   </svg>
   <a class="skip-link" href="#sobre">Pular apresentação</a>
-  <div class="intro" aria-hidden="true"><span class="intro-orbit"></span><span class="intro-mark"><span class="intro-letter">e</span><span class="intro-letter">j</span><span class="intro-dot">.</span></span><span class="intro-line"></span><span class="intro-caption">Um lugar para nos conectar.</span><span class="intro-counter">01 — Eduardo José</span></div>
+  <div class="intro" aria-hidden="true">
+    <div class="intro-scene intro-scene--casual"><svg viewBox="0 0 320 320"><path d="M245 82C194 32 71 58 48 151S85 282 190 270 303 154 250 112 85 94 80 180 196 239 239 189"/><circle cx="238" cy="76" r="4"/></svg><small>UM POUCO DE MIM</small></div>
+    <div class="intro-scene intro-scene--gamer"><svg viewBox="0 0 320 320"><path d="M70 100V70h30M220 70h30v30M250 220v30h-30M100 250H70v-30"/><circle class="hud-ring" cx="160" cy="160" r="121"/><path d="M160 32v12M160 276v12M32 160h12M276 160h12"/></svg><span class="intro-scan"></span><span class="intro-boot"><i style="--tick:0"></i><i style="--tick:1"></i><i style="--tick:2"></i><i style="--tick:3"></i><i style="--tick:4"></i><i style="--tick:5"></i><i style="--tick:6"></i><i style="--tick:7"></i></span><span class="intro-mode-caption">Conectando ao lobby.</span><span class="intro-mode-counter">VERMEIO / PLAYER 01</span></div>
+    <div class="intro-scene intro-scene--business"><span class="intro-business-label">IDEIA / DETALHE / EXPERIÊNCIA</span><small>EDUARDO JOSÉ · BUSINESS</small><span class="intro-mode-caption">Ideias com intenção. Interfaces com cuidado.</span><span class="intro-mode-counter">EDUARDO JOSÉ / DESENVOLVIMENTO WEB</span></div>
+    <span class="intro-mark"><span class="intro-letter">E</span><span class="intro-letter">J</span><span class="intro-dot">.</span></span>
+    <span class="intro-caption">Um lugar para nos conectar.</span><span class="intro-counter">01 — Eduardo José</span>
+  </div>
   <header class="site-header">
     <a class="signature" href="#inicio" aria-label="Eduardo José, início">Eduardo<span>.</span></a>
     <div class="header-actions"><button class="icon-button" id="share-button" aria-label="Compartilhar este site"><svg><use href="#share"/></svg></button><a class="icon-button menu-link" href="#explorar" aria-label="Explorar projetos e links"><svg><use href="#menu"/></svg></a></div>
   </header>
   <main>
     <section class="hero" id="inicio" aria-label="Apresentação">
+      <div class="hero-intro">
       <div class="hero-copy">
         <p class="eyebrow"><span class="tiny-dot"></span><span id="hero-role">Desenvolvedor web</span><span class="eyebrow-separator">/</span><span id="hero-location">São Paulo</span></p>
         <h1><span class="heading-line"><span>Olá, eu sou</span></span><span class="heading-line"><span>Eduardo José<span class="accent-dot">.</span></span></span></h1>
         <p class="hero-description" id="profile-description">Crio para a web. Compartilho ideias<br class="desktop-break"> e projetos por aqui.</p>
       </div>
+      <div class="hero-contact">
+        <a class="contact-button" href="https://api.whatsapp.com/send?phone=5511954723067&amp;text=Oi%20Eduardo%2C%20encontrei%20seu%20site%20e%20queria%20conversar." target="_blank" rel="noopener noreferrer"><svg><use href="#whatsapp"/></svg><span>Vamos conversar</span><svg class="contact-arrow"><use href="#arrow"/></svg></a>
+        <div class="social-links"><a href="https://github.com/eduardojsc18" target="_blank" rel="noopener noreferrer"><svg><use href="#github"/></svg>GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/eduardojsc/" target="_blank" rel="noopener noreferrer"><svg><use href="#linkedin"/></svg>LinkedIn</a></div>
+      </div>
+      </div>
       <div class="portrait-area">
+        <div class="desktop-visual" aria-hidden="true">
+          <svg class="desktop-art desktop-art--casual" viewBox="0 0 600 600"><ellipse cx="310" cy="300" rx="240" ry="258" transform="rotate(-22 310 300)"/><path d="M70 202C18 348 86 534 260 558M366 40c134 15 212 108 208 225M474 71l8 21 23 6-23 8-8 23-8-23-23-8 23-6Z"/><circle cx="65" cy="330" r="5"/><circle cx="536" cy="475" r="4"/><path class="desktop-sketch" d="m58 110 36-14-15 42m-20-22 47 1"/></svg>
+          <svg class="desktop-art desktop-art--gamer" viewBox="0 0 600 600"><circle cx="310" cy="280" r="230"/><circle cx="310" cy="280" r="170" stroke-dasharray="3 20"/><path d="M310 28v45M310 487v45M58 280h45M517 280h45M74 99V64h35M506 64h35v35M541 462v35h-35M109 497H74v-35"/><path class="desktop-radar-sector" d="M310 280 421 80A230 230 0 0 1 540 280Z"/><text x="110" y="573">VERMEIO</text></svg>
+          <svg class="desktop-art desktop-art--business" viewBox="0 0 600 600"><path d="M100 85V45h400v40M100 480v65h400v-65M45 120h510M45 450h510M145 45v500M455 45v500"/><circle cx="145" cy="120" r="4"/><circle cx="455" cy="450" r="4"/><text x="49" y="580">EJ.</text></svg>
+        </div>
         <div class="portrait-ambient" aria-hidden="true"><span class="ambient-orbit"></span><span class="ambient-orbit orbit-secondary"></span><span class="ambient-particle particle-one"></span><span class="ambient-particle particle-two"></span><span class="ambient-particle particle-three"></span><span class="ambient-sweep"></span></div>
         <div class="business-note" aria-hidden="true"><span>DESENVOLVIMENTO / WEB</span><span>Ideia. Detalhe. Experiência.</span><i></i></div>
-        <div class="cs-hud" aria-hidden="true"><div class="cs-hud-top"><span>PLAYER / 01</span><span>CS:GO</span></div><svg class="cs-radar" viewBox="0 0 100 100"><circle cx="50" cy="50" r="43"/><circle cx="50" cy="50" r="24"/><path d="M7 50h86M50 7v86M21 27h22v16h20v-9h17v34H61v12H34V63H21Z"/><circle class="radar-position" cx="43" cy="43" r="3"/><text x="27" y="38">A</text><text x="65" y="62">B</text></svg><span class="cs-hud-side">PLAY THE ROUND.</span><div class="cs-hud-bottom"><span>● &nbsp; NO LOBBY</span><span>SP / BR</span></div></div>
+        <div class="cs-hud" aria-hidden="true"><div class="cs-hud-top"><span>VERMEIO / 01</span><span>CS2</span></div><svg class="cs-radar" viewBox="0 0 100 100"><circle cx="50" cy="50" r="43"/><circle cx="50" cy="50" r="24"/><path d="M7 50h86M50 7v86M21 27h22v16h20v-9h17v34H61v12H34V63H21Z"/><circle class="radar-position" cx="43" cy="43" r="3"/><text x="27" y="38">A</text><text x="65" y="62">B</text></svg><span class="cs-hud-side">PLAY THE ROUND.</span><div class="cs-hud-bottom"><span>● &nbsp; GL &amp; HF</span><span>SP / BR</span></div></div>
         <div class="portrait-backdrop" aria-hidden="true"><svg viewBox="0 0 400 400"><path d="m32 263 293-180-8 37-285 178 7-27 288-177-6 66L37 324l-5-39 292-148-8 66L54 353l-8-25 292-166-17 90L65 371l-9-22 264-137-8 71-164 88 8-24 175-92-14 68-92 50 3-21 96-51-15 60-18 12Z"/></svg></div>
         <div class="portrait" id="portrait" tabindex="0" role="group" aria-label="Foto de Eduardo. Arraste para os lados ou use as setas do teclado para conhecer outros perfis.">
           <img id="profile-photo" src="assets/img/eduardo-casual-v1.png" width="1254" height="1254" alt="Eduardo José com camiseta verde-escura, em um retrato descontraído sem fundo" draggable="false" fetchpriority="high">
@@ -67,9 +109,10 @@
           <button class="portrait-arrow next" id="next-profile" aria-label="Próximo perfil"><svg><use href="#chevron"/></svg></button>
         </div>
       </div>
-      <div class="hero-contact">
-        <a class="contact-button" href="https://api.whatsapp.com/send?phone=5511954723067&amp;text=Oi%20Eduardo%2C%20encontrei%20seu%20site%20e%20queria%20conversar." target="_blank" rel="noopener noreferrer"><svg><use href="#whatsapp"/></svg><span>Vamos conversar</span><svg class="contact-arrow"><use href="#arrow"/></svg></a>
-        <div class="social-links"><a href="https://github.com/eduardojsc18" target="_blank" rel="noopener noreferrer"><svg><use href="#github"/></svg>GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/eduardojsc/" target="_blank" rel="noopener noreferrer"><svg><use href="#linkedin"/></svg>LinkedIn</a></div>
+      <div class="desktop-story" aria-label="Explore este perfil">
+        <div class="desktop-story-mode desktop-story--casual"><a href="#sobre"><span class="story-number">01</span><span><small>A PESSOA</small><b>Um pouco de mim</b></span><svg><use href="#arrow"/></svg></a><a href="#projetos"><span class="story-number">02</span><span><small>AS IDEIAS</small><b>O que eu crio</b></span><svg><use href="#arrow"/></svg></a><a href="#contato"><span class="story-number">03</span><span><small>AS CONEXÕES</small><b>Uma boa conversa</b></span><svg><use href="#arrow"/></svg></a></div>
+        <div class="desktop-story-mode desktop-story--gamer"><a href="#gamer-historia"><span class="story-number">1.6</span><span><small>ONDE COMEÇOU</small><b>Uma história de CS</b></span><svg><use href="#arrow"/></svg></a><a href="#gamer-historia"><svg class="story-emblem" viewBox="0 0 32 32"><path d="M9 5h14v8a7 7 0 0 1-14 0ZM9 8H5v3c0 4 2 6 5 6M23 8h4v3c0 4-2 6-5 6M16 20v6M10 27h12"/></svg><span><small>CONQUISTA NO CS:GO</small><b>Global Elite</b></span><svg><use href="#arrow"/></svg></a><a href="#gamer-steam"><span class="story-number">CS2</span><span><small>ME ENCONTRA NO LOBBY</small><b>Vermeio na Steam</b></span><svg><use href="#arrow"/></svg></a></div>
+        <div class="desktop-story-mode desktop-story--business"><a href="#business-criacoes"><img src="assets/img/apps/farol.png" alt="" width="40" height="40"><span><small>GESTÃO / E-COMMERCE</small><b>FAROL</b></span><svg><use href="#arrow"/></svg></a><a href="#business-criacoes"><img src="assets/img/apps/printpilot.png" alt="" width="40" height="40"><span><small>IMPRESSÃO / WINDOWS</small><b>PrintPilot</b></span><svg><use href="#arrow"/></svg></a><a href="#business-trajetoria"><span class="story-number">↗</span><span><small>TRAJETÓRIA / FULL STACK</small><b>Da ideia à operação</b></span><svg><use href="#arrow"/></svg></a></div>
       </div>
       <a class="scroll-cue" href="#sobre"><svg><use href="#down"/></svg><span>Role para me conhecer</span></a>
     </section>
@@ -99,7 +142,7 @@
       <section class="closing section reveal" id="contato"><div class="scene-content"><p class="eyebrow">Uma boa conversa é um começo.</p><h2>Vamos criar<br>uma conexão<span>?</span></h2><a class="contact-button" href="https://api.whatsapp.com/send?phone=5511954723067&amp;text=Oi%20Eduardo%2C%20encontrei%20seu%20site." target="_blank" rel="noopener noreferrer"><svg><use href="#whatsapp"/></svg><span>Fale comigo</span><svg class="contact-arrow"><use href="#arrow"/></svg></a></div></section>
     </div>
   </main>
-  <footer class="site-footer"><a class="signature" href="#inicio">Eduardo<span>.</span></a><div><a href="https://www.facebook.com/eduard0jsc" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://twitter.com/eduardojsc18" target="_blank" rel="noopener noreferrer">X</a><a href="https://steamcommunity.com/id/v3rme1o" target="_blank" rel="noopener noreferrer">Steam</a></div><p>São Paulo, Brasil <span>© <span id="year">2026</span></span></p></footer>
+  <footer class="site-footer"><a class="signature" href="#inicio">Eduardo<span>.</span></a><div><a href="https://www.facebook.com/eduard0jsc" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://twitter.com/eduardojsc18" target="_blank" rel="noopener noreferrer">X</a><a href="https://steamcommunity.com/id/rvermeio/" target="_blank" rel="noopener noreferrer">Steam</a></div><p>São Paulo, Brasil <span>© <span id="year">2026</span></span></p></footer>
   <p class="toast" id="toast" role="status"></p>
   <p class="sr-only" id="profile-status" role="status" aria-live="polite"></p>
 </body>
